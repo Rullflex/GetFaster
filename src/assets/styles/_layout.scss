@@ -31,6 +31,7 @@
 @media (min-width: map-get($grid-breakpoints, lg)) {
   .header{
     box-shadow: unset;
+    background-color: #fbfbfb;
     &__inner{
       padding-top: 2.5rem;
       padding-bottom: 3.75rem;
@@ -60,7 +61,6 @@
     }
     &__info-text{
       font-size: 1.25rem;
-      line-height: 1em;
       position: relative;
       padding-left: 1.625rem;
       margin-bottom: 0.3125rem;
@@ -275,35 +275,30 @@
 }
 
 .advantages{
-  
+  background-color: #fbfbfb;
+  .container{
+    padding-right: 0;
+  }
   &__title{
-    margin-bottom: 1.25rem;
-    max-width: 45rem;
+    font-size: 1.9375rem;
+    line-height: 2.625rem;
+    margin-bottom: 1.875rem;
+    max-width: 20rem;
   }
   &__subtitle{
-    font-size: 1.625rem;
-    line-height: 2.25rem;
-    margin-bottom: 2.1875rem;
-    display: block;
+    display: none;
   }
   &__items{
     display: flex;
-    
   }
   &__item{
-    max-width: 16.25rem;
+    max-width: 100%;
     position: relative;
     &::after{
-      content: '';
-      position: absolute;
-      width: 5.75rem;
-      height: 1px;
-      background-color: #dbdbdb;
-      top: 1.75rem;
-      right: -0.75rem;
+      display: none;
     }
     &:not(:last-child){
-      margin-right: 150px;
+      margin-right: 5rem;
     }
     &:last-child::after{
       display: none;
@@ -331,13 +326,18 @@
 }
 @media (min-width: map-get($grid-breakpoints, lg)) {
   .advantages{
+    background-color: #fbfbfb;
     background-image: url('../images/berry.png');
     background-repeat: no-repeat;
     background-position: right 200px bottom 50px;
-    
+    .container{
+      padding-right: 30px;
+    }
     &__title{
       margin-bottom: 1.25rem;
       max-width: 45rem;
+      font-size: 3.75rem;
+      line-height: 4.75rem;
     }
     &__subtitle{
       font-size: 1.625rem;
@@ -354,6 +354,7 @@
       position: relative;
       &::after{
         content: '';
+        display: block;
         position: absolute;
         width: 5.75rem;
         height: 1px;
@@ -390,13 +391,13 @@
 
 .info{
   padding-bottom: 6.25rem;
+  background-color: #fbfbfb;
   padding-top: 7.5rem;
   position: relative;
   &__bottle-decor{
     position: absolute;
     top: -230px;
     left: 0;
-    z-index: -1;
   }
   &__items{
     display: flex;
@@ -440,7 +441,6 @@
     position: absolute;
     right: 5.625rem;
     bottom: 2.0625rem;
-    background: none;
   }
   &__item--pig{
     background-position: center bottom;
@@ -459,6 +459,7 @@
 }
 
 .products{
+  background-color: #fbfbfb;
   padding-bottom: 8.125rem;
   &__inner{
     
@@ -478,8 +479,6 @@
     overflow: visible;
     width: 100%;
     padding-bottom: 23px;
-    ul.uk-slider-items {
-    }
   }
   &__items-bottom{
     overflow: visible;
@@ -489,8 +488,9 @@
   }
   &__item{
     display: block;
-    margin-right: 1.875rem;
-    
+    &:not(:last-child){
+      margin-right: 1.875rem;
+    }
   }
   &__buttons{
     @include flex-center;
@@ -612,6 +612,7 @@
 
 
 .lage{
+  background-color: #fbfbfb;
   padding-bottom: 7.5rem;
   &__title{
     text-align: center;
@@ -653,17 +654,14 @@
     }
   }
   &__map {
-    width: 1920px;
-    height: 849px;
-    li {
-      width: 100%;
-      height: 100%;
+    img {
+      @include center-item-x('relative');
     }
-    @include center-item-x('relative');
   }
 }
 
 .reviews{
+  background-color: #fbfbfb;
   &__title{
     text-align: center;
     margin-bottom: 2.5rem;
@@ -727,6 +725,7 @@
 
 
 .partners{
+  background-color: #fbfbfb;
   padding-bottom: 3.125rem;
   &__title{
     text-align: center;
@@ -811,6 +810,7 @@
 }
 
 .tabs{
+  background-color: #fbfbfb;
   padding: 8.75rem 0;
   &__title{
     text-align: center;
@@ -850,7 +850,7 @@
       right: 50px;
       transform: rotate(-45deg);
     }
-    &[aria-expanded=true]{
+    &.tabs__item-title--active{
       &::after{
         transform: rotate(45deg);
       }
@@ -861,6 +861,7 @@
   }
   &__item-content{
     padding-bottom: 2.5rem;
+    display: none;
   }
   &__item-text{
     max-width: 49.375rem;
