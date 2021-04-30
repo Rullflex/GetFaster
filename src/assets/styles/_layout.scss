@@ -1,6 +1,10 @@
 
 .header{
-  box-shadow: 1px 2px 4px rgba(0,0,0, 0.2);
+  background: #fbfbfb;
+  &.uk-active {
+
+    box-shadow: 1px 2px 4px rgba(0,0,0, 0.2);
+  }
   &__inner{
     padding-top: 1.875rem;
     padding-bottom: 1.875rem;
@@ -75,34 +79,8 @@
   }
 }
 
-.menu{
-  &-icon{
-    z-index: 1030;
-  }
-  &-drop{
-    width: 300px !important;
-    height: 500px;
-    top: 0 !important;
-    right: 0;
-    left: unset !important;
-    background-color: #fff;
-  }
-  &__list{
-    background-color: #fff;
-    padding-top: 0.625rem;
-  }
-  &__list-item{
-    padding-left: 2.1875rem;
-  }
-  &__list-link{
-    color: #2e2e2e;
-    font-size: 26px;
-    line-height: 54px;
-    @extend %pop-600;
-  }
-}
-
 .phone{
+  padding-top: 1rem;
   &__inner{
     display: flex;
     flex-direction: column;
@@ -178,8 +156,8 @@
     height: auto;
     width: 33.75rem;
     z-index: 3;
-    left: -80px;
-    top: -80px;
+    left: -5rem;
+    top: -5rem;
   }
   .phone-screen{
     position: absolute;
@@ -193,6 +171,7 @@
 }
 @media (min-width: map-get($grid-breakpoints, lg)) {
   .phone{
+    padding-top: 0;
     &__inner{
       display: flex;
       flex-direction: row;
@@ -496,13 +475,17 @@
     margin-bottom: 3.125rem;
   }
   &__items-top{
+    overflow: visible;
     width: 100%;
     padding-bottom: 23px;
     ul.uk-slider-items {
     }
   }
   &__items-bottom{
+    overflow: visible;
     width: 100%;
+    position: relative;
+    left: -100px;
   }
   &__item{
     display: block;

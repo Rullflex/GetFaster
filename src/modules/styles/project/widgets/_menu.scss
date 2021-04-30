@@ -38,11 +38,24 @@
         }
     }
     &-drop {
-        min-width: 200px;
-        padding: 15px;
-        background: #f8f8f8;
-        color: #666;
-        margin: 0;
+        width: 18.75rem !important;
+        height: 31.25rem;
         top: 0 !important;
+        right: 0;
+        left: unset !important;
+        background-color: #fff;
+    }
+    &__list{
+      background-color: #fff;
+      padding-top: 0.625rem;
+    }
+    &__list-item{
+      padding-left: 2.1875rem;
+    }
+    &__list-link{
+      color: #2e2e2e;
+      font-size: 1.625rem;
+      line-height: 3.375rem;
+      @extend %pop-600;
     }
 }
