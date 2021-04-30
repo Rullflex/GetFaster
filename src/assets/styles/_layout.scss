@@ -75,80 +75,96 @@
   }
 }
 
+.menu{
+  &-icon{
+    z-index: 1030;
+  }
+  &-drop{
+    width: 300px !important;
+    height: 500px;
+    top: 0 !important;
+    right: 0;
+    left: unset !important;
+    background-color: #fff;
+  }
+  &__list{
+    background-color: #fff;
+    padding-top: 0.625rem;
+  }
+  &__list-item{
+    padding-left: 2.1875rem;
+  }
+  &__list-link{
+    color: #2e2e2e;
+    font-size: 26px;
+    line-height: 54px;
+    @extend %pop-600;
+  }
+}
+
 .phone{
   &__inner{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   &__content{
     position: relative;
     max-width: 47.5rem;
+    display: flex;
+    flex-direction: column;
   }
   &__title{
     @extend %pop-600;
-    font-size: 3.75rem;
-    max-width: 37.5rem;
-    line-height: 4.875rem;
-    margin-bottom: 1.875rem;
+    font-size: 2.0625rem;
+    max-width: 100%;
+    line-height: 2.625rem;
+    margin-bottom: 0.625rem;
   }
   &__title-sale{
-    position: absolute;
+    order: 2;
+    position: static;
     top: 5rem;
     right: -35px;
-    background-image: url('../images/phone/title-sale.png');
+    background-image: none;
     background-repeat: no-repeat;
-    height: 5rem;
-    width: 12.8125rem;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
+    margin-bottom: 1.875rem;
   }
   &__title-sale-text{
-    padding-left: 1.6875rem;
+    padding-left: 0;
     font-size: 1.125rem;
     line-height: 1.625rem;
-    color: #fff;
+    color: #2e2e2e;
     @extend %gil-700;
   }
   &__text{
-    font-size: 1.875rem;
-    line-height: 2.625rem;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
     margin-bottom: 1.5625rem;
+    order:1;
   }
   &__app{
+    order: 3;
     display: flex;
-    align-items: center;
-    margin-bottom: 6.875rem;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3.125rem;
   }
   &__app-text{
-    position: relative;
-    padding-left: 2.75rem;
-    padding-right: 2.5rem;
-    p{
-      font-size: 1.375rem;
-      line-height: 2rem;
-    }
-    p:last-child{
-      @extend %gil-600;
-    }
-    &::before{
-      content: '';
-      position: absolute;
-      background-image: url('../images/icons/cloud.png');
-      background-repeat: no-repeat;
-      width: 1.5rem;
-      height: 1.5rem;
-      left: 0;
-      top: 1.25rem;
-    }
+    display: none;
   }
   &__app-load{
     &:not(:nth-child(2)){
-      padding-left: 1.25rem;
+      padding-left: 0;
     }
   }
   &__shop{
     max-width: 19.375rem;
-    height: 10px;
+    height: 41.25rem;
   }
   &__shop-frame{
     position: relative;
@@ -162,7 +178,7 @@
     height: auto;
     width: 33.75rem;
     z-index: 3;
-    left: -90px;
+    left: -80px;
     top: -80px;
   }
   .phone-screen{
@@ -171,7 +187,7 @@
     height: auto;
     z-index: 4;
     width: 16.875rem;
-    left: 1rem;
+    left: 1.5rem;
     top: 0.9375rem;
   }
 }
@@ -179,11 +195,13 @@
   .phone{
     &__inner{
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
     }
     &__content{
       position: relative;
       max-width: 47.5rem;
+      display: block;
     }
     &__title{
       font-size: 3.75rem;
@@ -201,6 +219,7 @@
       width: 12.8125rem;
       display: flex;
       align-items: center;
+      margin-bottom: 0;
     }
     &__title-sale-text{
       padding-left: 1.6875rem;
@@ -215,10 +234,12 @@
     }
     &__app{
       display: flex;
+      flex-direction: row;
       align-items: center;
       margin-bottom: 6.875rem;
     }
     &__app-text{
+      display: block;
       position: relative;
       padding-left: 2.75rem;
       padding-right: 2.5rem;

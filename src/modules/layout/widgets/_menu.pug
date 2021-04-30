@@ -2,12 +2,12 @@ mixin menu
     .menu&attributes(attributes)
         a.menu-icon(href="#") #[i]#[i]#[i]#[i]
         .menu-drop(data-uk-dropdown="mode: click; pos: bottom-justify; boundary: .header; boundary-align: true; animation: uk-animation-slide-top-small; duration: 300")
-            ul 
-                li
-                    a(href="#products" data-uk-scroll="offset: 50") produkte
-                li
-                    a(href="#products" data-uk-scroll) produkte
-                li
-                    a(href="#products" data-uk-scroll) produkte
-                li
-                    a(href="#products" data-uk-scroll) produkte
+            ul.menu__list 
+                li.menu__list-item
+                    a(href="#products" data-uk-scroll="offset: 50").menu__list-link PRODUKTE
+                li.menu__list-item
+                    a(href="#products" data-uk-scroll).menu__list-link LIEFERZONE
+                li.menu__list-item
+                    a(href="#products" data-uk-scroll).menu__list-link BEKANNT AUS
+                li.menu__list-item
+                    a(href="#products" data-uk-scroll).menu__list-link FAQ
