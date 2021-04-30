@@ -1521,7 +1521,7 @@
   }
   &__bottom-lang,
   &__bottom-time{
-    padding-left: 7.5rem;
+    padding-left: 0;
   }
   &__bottom-lang-link{
     font-size: 20px;
@@ -1533,12 +1533,11 @@
   }
   &__bottom-time{
     p{
-      padding-left: 15px;
-      display: inline;
+      display: block;
     }
   }
   &__bottom-time-title{
-    display: inline-block;
+    display: block;
     font-size: 20px;
     @extend %gil-700;
   }
