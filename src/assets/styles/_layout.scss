@@ -488,9 +488,7 @@
   }
   &__item{
     display: block;
-    &:not(:last-child){
-      margin-right: 1.875rem;
-    }
+    margin-right: 1.875rem;
   }
   &__buttons{
     @include flex-center;
@@ -861,7 +859,6 @@
   }
   &__item-content{
     padding-bottom: 2.5rem;
-    display: none;
   }
   &__item-text{
     max-width: 49.375rem;
