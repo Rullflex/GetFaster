@@ -141,9 +141,9 @@ block content
 							.phone__app-text
 								p Hol dir jetzt die
 								p GetFaster-App!
-							a.phone__app-load(href='#')
+							a.phone__app-load(href='#' data-mob-any)
 								+picture(png, `${assets}phone/google-play`, 'n')(alt='google-play')
-							a.phone__app-load(href='#')
+							a.phone__app-load(href='#' data-mob-ios)
 								+picture(png, `${assets}phone/app-store`, 'n')(alt='app-store')
 					.phone__shop
 						.phone__shop-frame
@@ -224,102 +224,107 @@ block content
 				| bis zu Getr&auml;nken und Tiefk&uuml;hlkost.
 			.container
 				.products__inner
-					.products__buttons
-						button.products__btn(data-filter='.category-c')
-							| OBST
-						button.products__btn(data-filter='.category-a')
-							| GEM&uuml;SE
-						button.products__btn(data-filter='.category-b')
-							| Getr&auml;nken
-					.products__items
-						.products__items-top(data-uk-slider="autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
-							ul.uk-slider-items
-								li.products__item
-									.products__item-content
-										+picture(png, `${assets}products/1`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 1.77
-								li.products__item
-									.products__item-content
-										+picture(png, `${assets}products/1`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 1.77
-								li.products__item
-									.products__item-content.blueberries-item
-										+picture(png, `${assets}products/2`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 1.49
-								li.products__item
-									.products__item-content
-										+picture(png, `${assets}products/3`, 'n').products__item-image
-									span.products__item-price
-										mark.price &euro; 3.99
-										| &euro; 2.99
-									.sale -10%
-								li.products__item
-									.products__item-content.yogurt-item
-										+picture(png, `${assets}products/4`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 1.06
-								li.products__item
-									.products__item-content
-										+picture(png, `${assets}products/5`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 5.99
-								li.products__item
-									.products__item-content
-										+picture(png, `${assets}products/6`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 2.15
-								li.products__item
-									.products__item-content
-										+picture(png, `${assets}products/7`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 0.99
-						.products__items-bottom(data-uk-slider="autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
-							ul.uk-slider-items
-								li.products__item(href='#')
-									.products__item-content
-										+picture(png, `${assets}products/8`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 5.19
-								li.products__item(href='#')
-									.products__item-content.bio-item
-										+picture(png, `${assets}products/9`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 2.66
-								li.products__item(href='#')
-									.products__item-content
-										+picture(png, `${assets}products/10`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 1.76
-								li.products__item(href='#')
-									.products__item-content
-										+picture(png, `${assets}products/11`, 'n').products__item-image
-									span.products__item-price
-										mark.price &euro; 3.99
-										| &euro; 0.89
-								li.products__item(href='#')
-									.products__item-content
-										+picture(png, `${assets}products/12`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 8.20
-									.sale -5%
-								li.products__item(href='#')
-									.products__item-content
-										+picture(png, `${assets}products/13`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 0.72
-								li.products__item(href='#')
-									.products__item-content
-										+picture(png, `${assets}products/14`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 0.95
-								li.products__item(href='#')
-									.products__item-content
-										+picture(png, `${assets}products/14`, 'n').products__item-image
-									span.products__item-price
-										| &euro; 1.39
+					ul.products__buttons(data-uk-switcher="animation: uk-animation-fade;")
+						li
+							a.products__btn
+								| OBST
+						li
+							a.products__btn
+								| GEM&uuml;SE
+						li
+							a.products__btn
+								| Getr&auml;nken
+					ul.products__items.uk-switcher
+						- for(var i=0; i < 3; i++)
+							li
+								.products__items-top(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+									ul.uk-slider-items
+										li.products__item
+											.products__item-content
+												+picture(png, `${assets}products/1`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 1.77
+										li.products__item
+											.products__item-content
+												+picture(png, `${assets}products/1`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 1.77
+										li.products__item
+											.products__item-content.blueberries-item
+												+picture(png, `${assets}products/2`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 1.49
+										li.products__item
+											.products__item-content
+												+picture(png, `${assets}products/3`, 'n').products__item-image
+											span.products__item-price
+												mark.price &euro; 3.99
+												| &euro; 2.99
+											.sale -10%
+										li.products__item
+											.products__item-content.yogurt-item
+												+picture(png, `${assets}products/4`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 1.06
+										li.products__item
+											.products__item-content
+												+picture(png, `${assets}products/5`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 5.99
+										li.products__item
+											.products__item-content
+												+picture(png, `${assets}products/6`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 2.15
+										li.products__item
+											.products__item-content
+												+picture(png, `${assets}products/7`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 0.99
+								.products__items-bottom(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+									ul.uk-slider-items
+										li.products__item(href='#')
+											.products__item-content
+												+picture(png, `${assets}products/8`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 5.19
+										li.products__item(href='#')
+											.products__item-content.bio-item
+												+picture(png, `${assets}products/9`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 2.66
+										li.products__item(href='#')
+											.products__item-content
+												+picture(png, `${assets}products/10`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 1.76
+										li.products__item(href='#')
+											.products__item-content
+												+picture(png, `${assets}products/11`, 'n').products__item-image
+											span.products__item-price
+												mark.price &euro; 3.99
+												| &euro; 0.89
+										li.products__item(href='#')
+											.products__item-content
+												+picture(png, `${assets}products/12`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 8.20
+											.sale -5%
+										li.products__item(href='#')
+											.products__item-content
+												+picture(png, `${assets}products/13`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 0.72
+										li.products__item(href='#')
+											.products__item-content
+												+picture(png, `${assets}products/14`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 0.95
+										li.products__item(href='#')
+											.products__item-content
+												+picture(png, `${assets}products/14`, 'n').products__item-image
+											span.products__item-price
+												| &euro; 1.39
 				.products__app-title
 					| Probier es mit GetFaster!
 				.products__app-load
