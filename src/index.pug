@@ -208,7 +208,7 @@ block content
 							p.info__item-title
 								| Sicher und
 								| Vertrauensvoll
-							a.info__link(href='#')
+							button.info__link(data-uk-tooltip="Some Info")
 								img.lazyload(src=`${assets}info/link.svg` alt='')
 					.info__item.info__item--cycle
 						p.info__item-title
@@ -222,102 +222,104 @@ block content
 				| &Uuml;ber 1 500 Produkte: von Milch, Fleisch,
 				| Fisch, Brot, frischem Obst und Gem&uuml;se
 				| bis zu Getr&auml;nken und Tiefk&uuml;hlkost.
-			.products__inner
-				.products__buttons
-					button.products__btn(data-filter='.category-c')
-						| OBST
-					button.products__btn(data-filter='.category-a')
-						| GEM&uuml;SE
-					button.products__btn(data-filter='.category-b')
-						| Getr&auml;nken
-				.products__items
-					.products__items-top
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/1`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 1.77
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/1`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 1.77
-						a.products__item(href='#')
-							.products__item-content.blueberries-item
-								+picture(png, `${assets}products/2`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 1.49
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/3`, 'n').products__item-image
-							span.products__item-price
-								mark.price &euro; 3.99
-								| &euro; 2.99
-							.sale -10%
-						a.products__item(href='#')
-							.products__item-content.yogurt-item
-								+picture(png, `${assets}products/4`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 1.06
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/5`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 5.99
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/6`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 2.15
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/7`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 0.99
-					.products__items-bottom
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/8`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 5.19
-						a.products__item(href='#')
-							.products__item-content.bio-item
-								+picture(png, `${assets}products/9`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 2.66
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/10`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 1.76
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/11`, 'n').products__item-image
-							span.products__item-price
-								mark.price &euro; 3.99
-								| &euro; 0.89
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/12`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 8.20
-							.sale -5%
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/13`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 0.72
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/14`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 0.95
-						a.products__item(href='#')
-							.products__item-content
-								+picture(png, `${assets}products/14`, 'n').products__item-image
-							span.products__item-price
-								| &euro; 1.39
 			.container
+				.products__inner
+					.products__buttons
+						button.products__btn(data-filter='.category-c')
+							| OBST
+						button.products__btn(data-filter='.category-a')
+							| GEM&uuml;SE
+						button.products__btn(data-filter='.category-b')
+							| Getr&auml;nken
+					.products__items
+						.products__items-top(data-uk-slider="autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+							ul.uk-slider-items
+								li.products__item
+									.products__item-content
+										+picture(png, `${assets}products/1`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 1.77
+								li.products__item
+									.products__item-content
+										+picture(png, `${assets}products/1`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 1.77
+								li.products__item
+									.products__item-content.blueberries-item
+										+picture(png, `${assets}products/2`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 1.49
+								li.products__item
+									.products__item-content
+										+picture(png, `${assets}products/3`, 'n').products__item-image
+									span.products__item-price
+										mark.price &euro; 3.99
+										| &euro; 2.99
+									.sale -10%
+								li.products__item
+									.products__item-content.yogurt-item
+										+picture(png, `${assets}products/4`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 1.06
+								li.products__item
+									.products__item-content
+										+picture(png, `${assets}products/5`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 5.99
+								li.products__item
+									.products__item-content
+										+picture(png, `${assets}products/6`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 2.15
+								li.products__item
+									.products__item-content
+										+picture(png, `${assets}products/7`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 0.99
+						.products__items-bottom(data-uk-slider="autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+							ul.uk-slider-items
+								li.products__item(href='#')
+									.products__item-content
+										+picture(png, `${assets}products/8`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 5.19
+								li.products__item(href='#')
+									.products__item-content.bio-item
+										+picture(png, `${assets}products/9`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 2.66
+								li.products__item(href='#')
+									.products__item-content
+										+picture(png, `${assets}products/10`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 1.76
+								li.products__item(href='#')
+									.products__item-content
+										+picture(png, `${assets}products/11`, 'n').products__item-image
+									span.products__item-price
+										mark.price &euro; 3.99
+										| &euro; 0.89
+								li.products__item(href='#')
+									.products__item-content
+										+picture(png, `${assets}products/12`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 8.20
+									.sale -5%
+								li.products__item(href='#')
+									.products__item-content
+										+picture(png, `${assets}products/13`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 0.72
+								li.products__item(href='#')
+									.products__item-content
+										+picture(png, `${assets}products/14`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 0.95
+								li.products__item(href='#')
+									.products__item-content
+										+picture(png, `${assets}products/14`, 'n').products__item-image
+									span.products__item-price
+										| &euro; 1.39
 				.products__app-title
 					| Probier es mit GetFaster!
 				.products__app-load
@@ -327,38 +329,39 @@ block content
 						+picture(png, `${assets}products/app`, 'n')
 		section.lage
 			.container
-				h2.lage__title.title
-					| Lieferzone
-				.lage__buttons
-					.lage__button
-						button.lage__btn Berlin
+				h2.lage__title.title Lieferzone
+				ul.lage__buttons(data-uk-switcher="animation: uk-animation-fade;")
+					li.lage__button
+						a(href='#').lage__btn Berlin
 						span.lage__btn-desc ab 120 Min
-					.lage__button
-						button.lage__btn D&uuml;sseldorf
+					li.lage__button
+						a(href='#').lage__btn D&uuml;sseldorf
 						span.lage__btn-desc ab 30 Min
-					.lage__button
-						button.lage__btn essen
+					li.lage__button
+						a(href='#').lage__btn essen
 						span.lage__btn-desc ab 30 Min
-					.lage__button
-						button.lage__btn RATINGEN
+					li.lage__button
+						a(href='#').lage__btn RATINGEN
 						span.lage__btn-desc ab 30 Min
-					.lage__button
-						button.lage__btn Gelsenkirchen
+					li.lage__button
+						a(href='#').lage__btn Gelsenkirchen
 						span.lage__btn-desc ab 30 Min
-					.lage__button
-						button.lage__btn Oberhausen
+					li.lage__button
+						a(href='#').lage__btn Oberhausen
 						span.lage__btn-desc ab 30 Min
-					.lage__button
-						button.lage__btn Gladbeck
+					li.lage__button
+						a(href='#').lage__btn Gladbeck
 						span.lage__btn-desc ab 30 Min
-					.lage__button
-						button.lage__btn Bottrop
+					li.lage__button
+						a(href='#').lage__btn Bottrop
 						span.lage__btn-desc ab 30 Min
-					.lage__button
-						button.lage__btn Hilden
+					li.lage__button
+						a(href='#').lage__btn Hilden
 						span.lage__btn-desc ab 30 Min
-				.lage__map
-					+picture(jpg, `${assets}map`, 'n')
+				ul.lage__map.uk-switcher
+					- for(var i = 1; i <= 9; i++)
+						li.ibg
+							+picture(jpg, `${assets}map`, 'n')
 		section.reviews
 			.container
 				h2.reviews__title.title
@@ -597,39 +600,39 @@ block content
 			.container
 				h2.tabs__title.title
 					| FAQ
-				.tabs__items.tabs__items-one
-					.tabs__item
-						.tabs__item-title
+				ul.tabs__items.tabs__items-one(data-uk-accordion)
+					li.tabs__item.uk-open
+						a.tabs__item-title.uk-accordion-title(href="#")
 							| Zu welcher Uhrzeit beliefert ihr mich?
-						.tabs__item-content
+						.tabs__item-content.uk-accordion-content
 							p.tabs__item-text
 								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
 								| Lieblings-Schokolade. Sonntags geschlossen.
-					.tabs__item
-						.tabs__item-title
+					li.tabs__item
+						a.tabs__item-title.uk-accordion-title(href="#")
 							| Wie hoch sind eure Lieferkosten?
-						.tabs__item-content
+						.tabs__item-content.uk-accordion-content
 							p.tabs__item-text
 								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
 								| Lieblings-Schokolade. Sonntags geschlossen.
-					.tabs__item
-						.tabs__item-title
+					li.tabs__item
+						a.tabs__item-title.uk-accordion-title(href="#")
 							| Wie hoch ist euer Mindestbestellwert?
-						.tabs__item-content
+						.tabs__item-content.uk-accordion-content
 							p.tabs__item-text
 								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
 								| Lieblings-Schokolade. Sonntags geschlossen.
-					.tabs__item
-						.tabs__item-title
+					li.tabs__item
+						a.tabs__item-title.uk-accordion-title(href="#")
 							| Wie kann ich bezahlen?
-						.tabs__item-content
+						.tabs__item-content.uk-accordion-content
 							p.tabs__item-text
 								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
 								| Lieblings-Schokolade. Sonntags geschlossen.
-					.tabs__item
-						.tabs__item-title
+					li.tabs__item
+						a.tabs__item-title.uk-accordion-title(href="#")
 							| Gibt es Produktkontrolle?
-						.tabs__item-content
+						.tabs__item-content.uk-accordion-content
 							p.tabs__item-text
 								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
 								| Lieblings-Schokolade. Sonntags geschlossen.
