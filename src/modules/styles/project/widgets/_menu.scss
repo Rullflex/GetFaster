@@ -1,0 +1,46 @@
+.menu {
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+        display: none;
+    }
+    &-icon {
+        width: 1.6875rem;
+        display: block;
+        position: relative;
+        i {
+            height: 0.1875rem;
+            width: 100%;
+            display: block;
+            background: $secondary;
+            transition: $transition--fast;
+            &:not(:nth-child(3)) {
+                margin-bottom: 0.3125rem;
+            }
+            &:last-child {
+                @include center-item-y("absolute");
+            }
+        }
+        &[aria-expanded=true]{
+            i {
+                &:nth-child(1) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    opacity: 0;
+                }
+                &:nth-child(2) {
+                    transform: rotate(-45deg);
+                }
+                &:nth-child(4) {
+                    transform: translateY(-50%) rotate(45deg);
+                }
+            }
+        }
+    }
+    &-drop {
+        min-width: 200px;
+        padding: 15px;
+        background: #f8f8f8;
+        color: #666;
+        margin: 0;
+    }
+}

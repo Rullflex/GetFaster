@@ -1,0 +1,22 @@
+<svg id="_" data-name="?" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #71a3ff;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        font-size: 18px;
+        fill: #71a3ff;
+        text-anchor: middle;
+        font-family: Gilroy;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+  <circle id="Эллипс_522" data-name="Эллипс 522" class="cls-1" cx="11" cy="11" r="10.5"/>
+  <text id="_2" data-name="?" class="cls-2" transform="translate(10.805 15.137) scale(0.759)">?</text>
+</svg>

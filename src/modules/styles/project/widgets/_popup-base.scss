@@ -1,0 +1,49 @@
+.popup {
+    padding: 1rem 0;
+	background: rgba(0,0,0,.6);
+    &__body {
+        width: 20rem;
+        // margin-top: 0 !important; 
+    }
+    &__close {
+        color: $primary;
+        right: 0.5rem;
+        svg {
+            width: 1rem;
+        }
+    }
+    &__title {}
+    &__subtitle {}
+}
+@media (min-width: map-get($grid-breakpoints, md)) {
+    .popup {
+        padding: 2.5rem;
+        &__body {}
+        &__close {
+            right: -2rem;
+            top: -2rem;
+            svg {
+                width: 1.5rem;
+            }
+        }
+        &__title {}
+        &__subtitle {}
+    }
+}
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .popup {
+        &__body {}
+        &__close {
+            right: 1rem;
+            top: 1rem;
+            svg {
+                width: 1.5rem;
+            }
+            &:hover {
+                color: $primary;
+            }
+        }
+        &__title {}
+        &__subtitle {}
+    }
+}

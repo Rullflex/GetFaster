@@ -1,0 +1,192 @@
+include widgets/_menu
+
+//- POPUP BASE
+
+mixin popup
+	.popup.uk-flex-top(data-uk-modal)&attributes(attributes)
+		.popup__body.uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
+			button.popup__close.uk-modal-close-default(type="button" data-uk-close)
+			block
+
+mixin popup-video-16-9
+	.popup-video.popup.uk-flex-top(data-uk-modal)&attributes(attributes)
+		.popup__body.uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical.embed-responsive.embed-responsive-16by9
+			button.popup__close.uk-modal-close-default(type="button" data-uk-close)
+
+
+//- SLIDER
+
+mixin slider-dotnav
+	ul.dotnav.uk-slider-nav&attributes(attributes)
+
+mixin slideshow-dotnav
+	ul.dotnav.uk-slideshow-nav&attributes(attributes)
+
+
+mixin slider-slidenav
+	ul.slidenav&attributes(attributes)
+		li.slidenav__item(data-uk-slider-item="previous")
+			a.slidenav__link.slidenav__link--prev(href="#")
+				+icon('angle-left').slidenav__icon
+		li.slidenav__item(data-uk-slider-item="next")
+			a.slidenav__link.slidenav__link--next(href="#")
+				+icon('angle-right').slidenav__icon
+
+mixin slideshow-slidenav
+	ul.slidenav&attributes(attributes)
+		li.slidenav__item(data-uk-slideshow-item="previous")
+			a.slidenav__link.slidenav__link--prev(href="#")
+				+icon('angle-left').slidenav__icon
+		li.slidenav__item(data-uk-slideshow-item="next")
+			a.slidenav__link.slidenav__link--next(href="#")
+				+icon('angle-right').slidenav__icon
+
+
+
+mixin slider-thumbnav(length, imgSrc = `${assets}slider-thumb-img-`)
+	ul.thumbnav&attributes(attributes)
+		if block 
+			block 
+		else
+			- for (var i = 0; i < length; i++)
+				li.thumbnav__item(data-uk-slider-item=i)
+					a.thumbnav__link.ibg(href="#")
+						+picture(jpg, `${imgSrc}${i + 1}`, 'n')
+
+mixin slideshow-thumbnav(length, imgSrc = `${assets}slider-thumb-img-`)
+	ul.thumbnav&attributes(attributes)
+		if block 
+			block 
+		else
+			- for (var i = 0; i < length; i++)
+				li.thumbnav__item(data-uk-slideshow-item=i)
+					a.thumbnav__link.ibg(href="#")
+						+picture(jpg, `${imgSrc}${i + 1}`, 'n')
+
+
+mixin quiz 
+	.quiz 
+
+		h1.title TITLE
+
+		ul.quiz-items 
+			li
+				h2 item 1
+				ul.quiz-radios
+					li
+					li
+					li
+
+			li
+				h2 item 2
+				ul.quiz-options
+					li
+					li
+					li
+			li
+				h2 item 3
+				input.quiz-input
+		ul.quiz-nav 
+		a.quiz-prev(href="#") PREV
+		a.quiz-next(href="#") NEXT
+		.quiz-progress
+			.quiz-progress-line
+
+//- ICONSET
+
+mixin icon(icon, filler = 'currentColor')
+	case icon
+		when 'angle-down'
+			svg(width="23" height="13" viewBox="0 0 23 13" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")&attributes(attributes)
+				path(d="M21.0206 1.66657L11.5114 9.67432L2.0022 1.66657" stroke=filler stroke-width="4")
+		when 'angle-btn-left'
+			svg(width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")&attributes(attributes)
+				path(d="M7.78778 1.11401L1.34934 7.55246L7.78778 13.9909" stroke=filler)
+		when 'angle-btn-right'
+			svg(width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")&attributes(attributes)
+				path(d="M0.787109 13.991L7.22555 7.55252L0.787108 1.11408" stroke=filler)
+		when 'angle-left'
+			svg(width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")&attributes(attributes)
+				path(d="M11.8093 22.3843L1.61725 12.1922L11.8093 2.00012" stroke=filler stroke-width="3" stroke-linejoin="round")
+		when 'angle-right'
+			svg(width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")&attributes(attributes)
+				path(d="M1.19214 22.3843L11.3842 12.1922L1.19214 2.00012" stroke=filler stroke-width="3" stroke-linejoin="round")
+		when 'social-fb'
+			svg(width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")&attributes(attributes)
+				path(d="M37.3071 0.36084H14.6545C6.97415 0.36084 0.728271 6.60673 0.728271 14.317V36.9695C0.728271 44.6499 6.97416 50.9256 14.6844 50.9256H37.337C45.0173 50.9256 51.2931 44.6798 51.2931 36.9695V14.317C51.2632 6.60673 44.9874 0.36084 37.3071 0.36084ZM46.7805 36.9396C46.7805 42.1694 42.5369 46.4131 37.3071 46.4131H14.6545C9.42469 46.4131 5.18107 42.1694 5.18107 36.9396V14.317C5.18107 9.08715 9.42469 4.84354 14.6545 4.84354H37.3071C42.5369 4.84354 46.7805 9.08715 46.7805 14.317V36.9396Z" fill=filler)
+				path(d="M21.1692 19.666H17.2245V24.9257H21.1692V40.7346H27.7738V24.9556H32.5852L33.0633 19.6959H27.8036V17.4844C27.8036 16.2292 28.0427 15.7212 29.268 15.7212H33.0633V9.1167H28.0427C23.2911 9.1167 21.1991 11.2086 21.1991 15.2132L21.1692 19.666Z" fill=filler)
+		when 'social-inst'
+			svg(width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")&attributes(attributes)
+				path(d="M37.5091 0.36084H14.8565C7.17617 0.36084 0.900391 6.60673 0.900391 14.317V36.9695C0.900391 44.6499 7.14628 50.9256 14.8565 50.9256H37.5091C45.1894 50.9256 51.4652 44.6798 51.4652 36.9695V14.317C51.4652 6.60673 45.2193 0.36084 37.5091 0.36084ZM46.9825 36.9396C46.9825 42.1694 42.7389 46.4131 37.5091 46.4131H14.8565C9.62671 46.4131 5.38309 42.1694 5.38309 36.9396V14.2871C5.38309 9.05727 9.62671 4.81365 14.8565 4.81365H37.5091C42.7389 4.81365 46.9825 9.05727 46.9825 14.2871V36.9396Z" fill=filler)
+				path(d="M26.2127 12.5837C19.0404 12.5837 13.183 18.4112 13.183 25.6134C13.183 32.7858 19.0105 38.6431 26.2127 38.6431C33.4149 38.6431 39.2125 32.7858 39.2125 25.6134C39.2125 18.4411 33.385 12.5837 26.2127 12.5837ZM26.2127 34.1605C21.5208 34.1605 17.6657 30.3352 17.6657 25.6134C17.6657 20.8917 21.4909 17.0664 26.2127 17.0664C30.9345 17.0664 34.7298 20.9216 34.7298 25.6134C34.7298 30.3352 30.9046 34.1605 26.2127 34.1605Z" fill=filler)
+				path(d="M39.7802 8.78809C38.9136 8.78809 38.0768 9.1467 37.4492 9.74439C36.8217 10.3421 36.4929 11.2087 36.4929 12.0754C36.4929 12.9421 36.8515 13.7788 37.4492 14.4064C38.0469 15.0041 38.9136 15.3627 39.7802 15.3627C40.6469 15.3627 41.4837 15.0041 42.1112 14.4064C42.7388 13.7788 43.0675 12.9421 43.0675 12.0754C43.0675 11.2087 42.7089 10.372 42.1112 9.74439C41.4837 9.1467 40.6469 8.78809 39.7802 8.78809Z" fill=filler)
+		
+
+//- PICTURE
+
+//- type: `jpg`/ `png` or jpg/ png if so-called var exsist
+	src: `${path}/to/img`  - without postfixes and dimensions
+	dimentions: `s`/ `sml`/ `sl`/ `smlx`/ `sx`....
+	retina: true/ false
+
+	Атрибуты типа class, alt записываются как обычно в скобках сразу за миксином  --> +picture(jpg, 'tmp')(class="pic" alt="lev")
+
+	Называть картинку так --> any-name-sm.jpg / any-name-lg@2x.png
+
+- var jpg = `jpg`, png = `png` //- для удобства
+
+- var globalRetinaUsage = `` //- `` -if false
+- var globalDimentionsUsage = `sl`
+
+- var postfixRetina = '@2x'
+- var postfix = { sm: `-sm`, md: `-md`, lg: `-lg`, xl: `-xl` } //- `smlx`
+
+mixin picture(type, src, dimentions = globalDimentionsUsage, retina = globalRetinaUsage)
+	picture
+		if dimentions.includes(`n`)
+			source(srcset=ipl data-srcset!=`${retina.includes(`n`) ? `${src + postfixRetina}.webp 2x,` : ``} ${src}.webp${retina.includes(`n`) ? ` 1x` : ``}` type=`image/webp`)
+			source(srcset=ipl data-srcset!=`${retina.includes(`n`) ? `${src + postfixRetina}.${type} 2x,` : ``} ${src}.${type}${retina.includes(`n`) ? ` 1x` : ``}` type=`image/${type}`)
+			img.lazyload(src!=ipl data-src!=`${src}.${type}` alt='')&attributes(attributes)
+		else
+			if dimentions.includes(`x`)
+				source(media=`(min-width: ${xl}px)` srcset=ipl data-srcset!=`${retina.includes(`x`) ? `${src + postfix.xl + postfixRetina}.webp 2x,` : ``} ${src + postfix.xl}.webp${retina.includes(`x`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: ${xl}px)` srcset=ipl data-srcset!=`${retina.includes(`x`) ? `${src + postfix.xl + postfixRetina}.${type} 2x,` : ``} ${src + postfix.xl}.${type}${retina.includes(`x`) ? ` 1x` : ``}` type=`image/${type}`)
+			if dimentions.includes(`l`)
+				source(media=`(min-width: ${lg}px)` srcset=ipl data-srcset!=`${retina.includes(`l`) ? `${src + postfix.lg + postfixRetina}.webp 2x,` : ``} ${src + postfix.lg}.webp${retina.includes(`l`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: ${lg}px)` srcset=ipl data-srcset!=`${retina.includes(`l`) ? `${src + postfix.lg + postfixRetina}.${type} 2x,` : ``} ${src + postfix.lg}.${type}${retina.includes(`l`) ? ` 1x` : ``}` type=`image/${type}`)
+			if dimentions.includes(`m`)
+				source(media=`(min-width: ${md}px)` srcset=ipl data-srcset!=`${retina.includes(`m`) ? `${src + postfix.md + postfixRetina}.webp 2x,` : ``} ${src + postfix.md}.webp${retina.includes(`m`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: ${md}px)` srcset=ipl data-srcset!=`${retina.includes(`m`) ? `${src + postfix.md + postfixRetina}.${type} 2x,` : ``} ${src + postfix.md}.${type}${retina.includes(`m`) ? ` 1x` : ``}` type=`image/${type}`)
+			if dimentions.includes(`s`)
+				source(media=`(min-width: 0px)` srcset=ipl data-srcset!=`${retina.includes(`s`) ? `${src + postfix.sm + postfixRetina}.webp 2x,` : ``} ${src + postfix.sm}.webp${retina.includes(`s`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: 0px)` srcset=ipl data-srcset!=`${retina.includes(`s`) ? `${src + postfix.sm + postfixRetina}.${type} 2x,` : ``} ${src + postfix.sm}.${type}${retina.includes(`s`) ? ` 1x` : ``}` type=`image/${type}`)
+			
+			if dimentions.includes(`l`)
+				img.lazyload(src!=ipl data-src!=`${src + postfix.lg}.${type}` alt='')&attributes(attributes)
+			else
+				img.lazyload(src!=ipl data-src!=`${src + postfix.md}.${type}` alt='')&attributes(attributes)
+			
+mixin picture-min(type, src, minSrc,  dimentions = globalDimentionsUsage, retina = globalRetinaUsage)
+	picture
+		if dimentions.includes(`n`)
+			source(srcset=`${minSrc}-min.${type}` data-srcset!=`${retina.includes(`n`) ? `${src + postfixRetina}.webp 2x,` : ``} ${src}.webp${retina.includes(`n`) ? ` 1x` : ``}` type=`image/webp`)
+			source(srcset=`${minSrc}-min.${type}` data-srcset!=`${retina.includes(`n`) ? `${src + postfixRetina}.${type} 2x,` : ``} ${src}.${type}${retina.includes(`n`) ? ` 1x` : ``}` type=`image/${type}`)
+			img.lazyload.lazymin(src!=`${minSrc}-min.${type}` data-src!=`${src}.${type}` alt='')&attributes(attributes)
+		else
+			if dimentions.includes(`x`)
+				source(media=`(min-width: ${xl}px)` srcset=`${minSrc + postfix.xl}-min.${type}` data-srcset!=`${retina.includes(`x`) ? `${src + postfix.xl + postfixRetina}.webp 2x,` : ``} ${src + postfix.xl}.webp${retina.includes(`x`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: ${xl}px)` srcset=`${minSrc + postfix.xl}-min.${type}` data-srcset!=`${retina.includes(`x`) ? `${src + postfix.xl + postfixRetina}.${type} 2x,` : ``} ${src + postfix.xl}.${type}${retina.includes(`x`) ? ` 1x` : ``}` type=`image/${type}`)
+			if dimentions.includes(`l`)
+				source(media=`(min-width: ${lg}px)` srcset=`${minSrc + postfix.lg}-min.${type}` data-srcset!=`${retina.includes(`l`) ? `${src + postfix.lg + postfixRetina}.webp 2x,` : ``} ${src + postfix.lg}.webp${retina.includes(`l`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: ${lg}px)` srcset=`${minSrc + postfix.lg}-min.${type}` data-srcset!=`${retina.includes(`l`) ? `${src + postfix.lg + postfixRetina}.${type} 2x,` : ``} ${src + postfix.lg}.${type}${retina.includes(`l`) ? ` 1x` : ``}` type=`image/${type}`)
+			if dimentions.includes(`m`)
+				source(media=`(min-width: ${md}px)` srcset=`${minSrc + postfix.md}-min.${type}` data-srcset!=`${retina.includes(`m`) ? `${src + postfix.md + postfixRetina}.webp 2x,` : ``} ${src + postfix.md}.webp${retina.includes(`m`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: ${md}px)` srcset=`${minSrc + postfix.md}-min.${type}` data-srcset!=`${retina.includes(`m`) ? `${src + postfix.md + postfixRetina}.${type} 2x,` : ``} ${src + postfix.md}.${type}${retina.includes(`m`) ? ` 1x` : ``}` type=`image/${type}`)
+			if dimentions.includes(`s`)
+				source(media=`(min-width: 0px)` srcset=`${minSrc + postfix.sm}-min.${type}` data-srcset!=`${retina.includes(`s`) ? `${src + postfix.sm + postfixRetina}.webp 2x,` : ``} ${src + postfix.sm}.webp${retina.includes(`s`) ? ` 1x` : ``}` type=`image/webp`)
+				source(media=`(min-width: 0px)` srcset=`${minSrc + postfix.sm}-min.${type}` data-srcset!=`${retina.includes(`s`) ? `${src + postfix.sm + postfixRetina}.${type} 2x,` : ``} ${src + postfix.sm}.${type}${retina.includes(`s`) ? ` 1x` : ``}` type=`image/${type}`)
+			
+			if dimentions.includes(`l`)
+				img.lazyload.lazymin(src!=`${minSrc + postfix.lg}-min.${type}` data-src!=`${src + postfix.lg}.${type}` alt='')&attributes(attributes)
+			else
+				img.lazyload.lazymin(src!=`${minSrc + postfix.md}-min.${type}` data-src!=`${src + postfix.md}.${type}` alt='')&attributes(attributes)

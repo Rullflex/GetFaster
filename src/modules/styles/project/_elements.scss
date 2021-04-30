@@ -1,0 +1,15 @@
+@import "./elements/buttons";
+@import "./elements/input";
+@import "./elements/slider";
+@import "./elements/loader";
+
+mark{
+    background-color: transparent !important;
+    color: $accent;
+}
+
+.title{
+    font-size: 3.75rem;
+    line-height: 4.75rem;
+    @extend %pop-600;
+}

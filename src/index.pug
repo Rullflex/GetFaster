@@ -1,0 +1,636 @@
+extends modules/layout/_layout
+
+prepend head
+	title Title your page
+	meta(name="description", content="Описание страницы")
+
+block header
+	header.header
+		.container
+			.header__inner
+				.header__logo
+					a.logo
+						+picture(png, `${assets}logo`, 'n')(alt='logo')
+					a.header__link(href='#') Lieferst&auml;dte
+				.header__info
+					p.header__info-text
+						| Jetzt ge&ouml;ffnet!
+					p.header__info-time
+						| Mo. - Sa 09:00 - 22:00
+				+menu
+block footer
+	footer.footer
+		.container
+			.footer__top
+				ul.footer__top-list
+					li.footer__top-list-item
+						| &Uuml;ber uns
+					li.footer__top-list-item
+						a.footer__top-list-link(href='#') Impressum
+					li.footer__top-list-item
+						a.footer__top-list-link(href='#') Datenschutz
+					li.footer__top-list-item
+						a.footer__top-list-link(href='#') AGB
+					li.footer__top-list-item
+						a.footer__top-list-link(href='#') Karriere
+				ul.footer__top-list
+					li.footer__top-list-item
+						| Services
+					li.footer__top-list-item
+						a.footer__top-list-link(href='#') Getr&auml;nkelieferung
+					li.footer__top-list-item
+						a.footer__top-list-link(href='#') Brotlieferung
+					li.footer__top-list-item
+						a.footer__top-list-link(href='#') Bier Lieferung
+				.footer__top-list-inner
+					.footer__top-list-title
+						| Lieferzone
+					.footer__top-list-row
+						ul.footer__top-list
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Berlin
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') D&uuml;sseldorf
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Essen
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Ratingen
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Gelsenkirchen
+						ul.footer__top-list
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Bottrop
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Oberhausen
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Hilden
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Gladbeck
+				.footer__top-list-inner
+					.footer__top-list-title
+						| Vergleich
+					.footer__top-list-row
+						ul.footer__top-list
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Rewe Lieferung
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Lidl Online
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Bringmeister
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Picnic
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Food.de
+						ul.footer__top-list
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Netto Online
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Gorillas
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Flink
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Bring.de
+			.footer__bottom
+				.footer__bottom-inner
+					ul.footer__bottom-social
+						li.footer__bottom-social-item
+							a.footer__bottom-social-link(href='#')
+								+picture(png, `${assets}phone/google-play`, 'n').google-play
+						li.footer__bottom-social-item
+							a.footer__bottom-social-link(href='#')
+								+picture(png, `${assets}phone/app-store`, 'n').app-store
+						li.footer__bottom-social-item
+							a.footer__bottom-social-link(href='#')
+								+picture(png, `${assets}fb`, 'n')
+						li.footer__bottom-social-item
+							a.footer__bottom-social-link(href='#')
+								+picture(png, `${assets}in`, 'n')
+					.footer__bottom-lang
+						a.footer__bottom-lang-link(href='#')
+							| DE
+						a.footer__bottom-lang-link(href='#')
+							| EN
+						a.footer__bottom-lang-link(href='#')
+							| RU
+					.footer__bottom-time
+							.footer__bottom-time-title
+								| Kundenservice:
+							p
+								| Mo.- Fr. 9:00 - 19:00 Uhr
+				a.footer__bottom-mail(href='mailto:support@getfaster.io')
+					| support@getfaster.io
+				p.footer__bottom-text
+					| &copy; GetFaster GmbH 2021
+block content
+	main.main
+		section.phone
+			.container
+				.phone__inner
+					.phone__content
+						h1.phone__title
+							| Lebensmittel nach
+							| Hause 
+							mark ab 30 Min
+						.phone__title-sale
+							p.phone__title-sale-text
+								| Mindestbestellwert
+								| nur 5&euro;
+						p.phone__text
+							| Gratis Lebensmittellieferung zum Supermarktpriesen
+						.phone__app
+							.phone__app-text
+								p Hol dir jetzt die
+								p GetFaster-App!
+							a.phone__app-load(href='#')
+								+picture(png, `${assets}phone/google-play`, 'n')(alt='google-play')
+							a.phone__app-load(href='#')
+								+picture(png, `${assets}phone/app-store`, 'n')(alt='app-store')
+					.phone__shop
+						.phone__shop-frame
+							+picture(png, `${assets}phone/phone`, 'n')(alt='phone-image').phone-frame
+							+picture(png, `${assets}phone/screen`, 'n').phone-screen
+		section.advantages
+			.container
+				h2.advantages__title.title
+					| Einkaufen mit Getfaster
+					| ist schnell und einfach.
+				span.advantages__subtitle
+					| So funktioniert es:
+				.advantages__slider
+					ul.advantages__items.uk-slider-items
+						li.advantages__item
+							span.advantages__item-num
+								| 01
+							.advantages__item-title
+								| Lade die App herunter
+							p.advantages__item-text
+								| Produkte ausw&auml;hlen,
+								br
+								|  in den Warenkorb legen 
+								br
+								|                 und bestellen.
+						li.advantages__item
+							span.advantages__item-num
+								| 02
+							.advantages__item-title
+								| K&uuml;mmere dich 
+								br
+								| um wichtigere Dinge
+							p.advantages__item-text
+								| Spare Zeit und Geschleppe.
+								| Keine schweren Taschen, keine
+								| Warteschlangen und Aufpreise
+						li.advantages__item
+							span.advantages__item-num
+								| 03
+							.advantages__item-title
+								| In 60-90 Minuten
+								| klingelt dein Einkauf
+								| an der Wohnungst&uuml;r!
+							p.advantages__item-text
+								| Gratis Lieferung. Zahlung per
+								| PayPal oder Bar
+		section.info
+			.info__bottle-decor.d-none.d-lg-block
+				+picture(png, `${assets}bottle`, 'n')
+			.container
+				.info__items
+					.info__item.info__item--pig
+						p.info__item-title
+							| Supermarktg&uuml;nstig
+							| und ohne Aufpreis
+					.info__item-items
+						.info__item-small
+							p.info__item-title
+								| Mindestbestellwert
+								| nur 5 Euro
+						.info__item-small
+							p.info__item-title
+								| Sicher und
+								| Vertrauensvoll
+							a.info__link(href='#')
+								img.lazyload(src=`${assets}info/link.svg` alt='')
+					.info__item.info__item--cycle
+						p.info__item-title
+							| Immer gratis
+							| Lieferung bis an
+							| der Haust&uuml;r 
+							br
+							| schon ab 30 Min!
+		section.products#products
+			h2.products__title.title
+				| &Uuml;ber 1 500 Produkte: von Milch, Fleisch,
+				| Fisch, Brot, frischem Obst und Gem&uuml;se
+				| bis zu Getr&auml;nken und Tiefk&uuml;hlkost.
+			.products__inner
+				.products__buttons
+					button.products__btn(data-filter='.category-c')
+						| OBST
+					button.products__btn(data-filter='.category-a')
+						| GEM&uuml;SE
+					button.products__btn(data-filter='.category-b')
+						| Getr&auml;nken
+				.products__items
+					.products__items-top
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/1`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 1.77
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/1`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 1.77
+						a.products__item(href='#')
+							.products__item-content.blueberries-item
+								+picture(png, `${assets}products/2`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 1.49
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/3`, 'n').products__item-image
+							span.products__item-price
+								mark.price &euro; 3.99
+								| &euro; 2.99
+							.sale -10%
+						a.products__item(href='#')
+							.products__item-content.yogurt-item
+								+picture(png, `${assets}products/4`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 1.06
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/5`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 5.99
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/6`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 2.15
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/7`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 0.99
+					.products__items-bottom
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/8`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 5.19
+						a.products__item(href='#')
+							.products__item-content.bio-item
+								+picture(png, `${assets}products/9`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 2.66
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/10`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 1.76
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/11`, 'n').products__item-image
+							span.products__item-price
+								mark.price &euro; 3.99
+								| &euro; 0.89
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/12`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 8.20
+							.sale -5%
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/13`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 0.72
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/14`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 0.95
+						a.products__item(href='#')
+							.products__item-content
+								+picture(png, `${assets}products/14`, 'n').products__item-image
+							span.products__item-price
+								| &euro; 1.39
+			.container
+				.products__app-title
+					| Probier es mit GetFaster!
+				.products__app-load
+					a.products__app-link(href='#')
+						+picture(png, `${assets}products/google`, 'n')
+					a.products__app-link(href='#')
+						+picture(png, `${assets}products/app`, 'n')
+		section.lage
+			.container
+				h2.lage__title.title
+					| Lieferzone
+				.lage__buttons
+					.lage__button
+						button.lage__btn Berlin
+						span.lage__btn-desc ab 120 Min
+					.lage__button
+						button.lage__btn D&uuml;sseldorf
+						span.lage__btn-desc ab 30 Min
+					.lage__button
+						button.lage__btn essen
+						span.lage__btn-desc ab 30 Min
+					.lage__button
+						button.lage__btn RATINGEN
+						span.lage__btn-desc ab 30 Min
+					.lage__button
+						button.lage__btn Gelsenkirchen
+						span.lage__btn-desc ab 30 Min
+					.lage__button
+						button.lage__btn Oberhausen
+						span.lage__btn-desc ab 30 Min
+					.lage__button
+						button.lage__btn Gladbeck
+						span.lage__btn-desc ab 30 Min
+					.lage__button
+						button.lage__btn Bottrop
+						span.lage__btn-desc ab 30 Min
+					.lage__button
+						button.lage__btn Hilden
+						span.lage__btn-desc ab 30 Min
+				.lage__map
+					+picture(jpg, `${assets}map`, 'n')
+		section.reviews
+			.container
+				h2.reviews__title.title
+					| Das sagen unsere Kunden
+				.reviews__slider
+					ul.reviews__inner.uk-slider-items
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/1`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| Nicklas F.
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;Super App!&apos;&apos;
+								p.reviews__item-text
+									| Super App! Es wird schnell
+									| geliefert und hat vorallem
+									| einen Sehr angenehmen
+									| Mindestbestellwert! Finde
+									| das ganze System sehr gut
+									| auch das immer mehr Artikel
+									| hinzu kommen...weiter so!!!
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/app`, 'n')
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/5`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| Marina Blatt
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;Wirklich toller Service!&apos;&apos;
+								p.reviews__item-text
+									| Wirklich toller Service!
+									| Sehr nette Leute und richtig
+									| schnelle Lieferung.
+									| Bin begeistert!
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/fb`, 'n')
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/2`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| Lamont 43
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;Gro&szlig;artiger 
+									br
+									| Ort f&uuml;r Online-Eink&auml;ufe.&apos;&apos;
+								p.reviews__item-text
+									| Tolle App f&uuml;r Online-
+									| Lebensmitteleink&auml;ufe.
+									| Bietet einen sehr
+									| vern&uuml;nftigen Preis und
+									| Qualit&auml;tsprodukte ...
+									| Dies ist ein gro&szlig;artiger
+									| Ort f&uuml;r Online-Eink&auml;ufe.
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/play`, 'n')
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/6`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| Sonja Zug
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;Freundlich, schnell.&apos;&apos;
+								p.reviews__item-text
+									| Freundlich, schnell und
+									| zuverl&auml;ssig. F&uuml;r uns gibt
+									| es seit Wochen keinen
+									| besseren Lieferdienst
+									| als getfaster. Vielen
+									| lieben Dank
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/fb`, 'n')
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/3`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| Rolf Epiphany
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;Die Lieferung ist gut.&apos;&apos;
+								p.reviews__item-text
+									| Ich freue mich daher,
+									| diese Art von Online-
+									| App- Entwicklern
+									| zu ermutigen. Es ist
+									| wirklich eine gute App ...
+									| die Lieferung ist gut.
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/play`, 'n')
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/7`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| Denise J.
+										| Blasczok
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;Volle 5 Sterne!!!&apos;&apos;
+								p.reviews__item-text
+									| Volle 5 Sterne!!! Und sehr
+									| verdient!! Sehr unkompliziert
+									| &uuml;ber das Portal Lebensmittel
+									| bestellt. Und: Nach 45 Minuten
+									| wurden sie schon bei mir
+									| angeliefert!!! Nichts hat
+									| gefehlt, alles super frisch!
+									| Immer wieder gerne
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/fb`, 'n')
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/4`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| scarlet degre
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;P&uuml;nktliche Lieferung.&apos;&apos;
+								p.reviews__item-text
+									| Sehr professionelle,
+									| fantastische Verpackung,
+									| p&uuml;nktliche Lieferung.
+									| Ich bin wirklich sehr
+									| beeindruckt und schlage
+									| vor, dass jeder seinen
+									| t&auml;glichen Bedarf &uuml;ber
+									| diese App bestellt.
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/fb`, 'n')
+						li.reviews__item
+							.reviews__item-human
+								+picture(png, `${assets}reviews/8`, 'n').reviews__item-photo
+								.reviews__item-desc
+									p.reviews__item-name
+										| Victoria
+									.reviews__item-rating
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+										img.star(src=`${assets}reviews/star.png` alt='')
+							.reviews__item-content
+								.reviews__item-title
+									| &apos;&apos;Genial!&apos;&apos;
+								p.reviews__item-text
+									| Genial! Ich gehe nie
+									| wieder einkaufen!
+								a.reviews__item-link(href='#')
+									+picture(png, `${assets}reviews/play`, 'n')
+		.partners
+			.container
+				h2.partners__title.title
+					| Bekannt aus:
+				.partners__inner
+					a.partners__link(href='#')
+						+picture(png, `${assets}partners/1`, 'n')
+					a.partners__link(href='#')
+						+picture(png, `${assets}partners/2`, 'n')
+					a.partners__link(href='#')
+						+picture(png, `${assets}partners/3`, 'n')
+		.offer
+			.container
+				.offer__inner
+					.offer__content
+						+picture(png, `${assets}hot`, 'n').offer__content-img
+						.offer__content-desc
+							.offer__content-title
+								| Neukunden Angebot!
+							p.offer__content-text
+								span 5 Euro Gutschein
+								|  schon ab 10
+								|  Euro Mindestbestellwert
+							p.offer__content-code
+								| Gutscheincode: GETSTART
+					.offer__app
+						.offer__app-title
+							| Hol dir jetzt die GetFaster-App!
+						.offer__app-load
+							a.products__app-link(href='#')
+								+picture(png, `${assets}products/google`, 'n')
+							a.products__app-link(href='#')
+								+picture(png, `${assets}products/app`, 'n')
+		.tabs
+			.container
+				h2.tabs__title.title
+					| FAQ
+				.tabs__items.tabs__items-one
+					.tabs__item
+						.tabs__item-title
+							| Zu welcher Uhrzeit beliefert ihr mich?
+						.tabs__item-content
+							p.tabs__item-text
+								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
+								| Lieblings-Schokolade. Sonntags geschlossen.
+					.tabs__item
+						.tabs__item-title
+							| Wie hoch sind eure Lieferkosten?
+						.tabs__item-content
+							p.tabs__item-text
+								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
+								| Lieblings-Schokolade. Sonntags geschlossen.
+					.tabs__item
+						.tabs__item-title
+							| Wie hoch ist euer Mindestbestellwert?
+						.tabs__item-content
+							p.tabs__item-text
+								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
+								| Lieblings-Schokolade. Sonntags geschlossen.
+					.tabs__item
+						.tabs__item-title
+							| Wie kann ich bezahlen?
+						.tabs__item-content
+							p.tabs__item-text
+								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
+								| Lieblings-Schokolade. Sonntags geschlossen.
+					.tabs__item
+						.tabs__item-title
+							| Gibt es Produktkontrolle?
+						.tabs__item-content
+							p.tabs__item-text
+								| Wir beliefern dich Mo-Sa von 9-22 Uhr mit einem vollen Sortiment &mdash; von frischem Brot bis deiner
+								| Lieblings-Schokolade. Sonntags geschlossen.
+

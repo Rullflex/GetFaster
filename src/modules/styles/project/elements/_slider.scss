@@ -1,0 +1,92 @@
+/* ========================================================================
+   Component: Slidenav
+ ========================================================================== */
+
+.slidenav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    &__item {}
+    &__link {
+        pointer-events: initial;
+        color: $primary;
+        &--prev {}
+        &--next {}
+    }
+    &__icon {}
+}
+
+/* ========================================================================
+   Component: Thumbnav
+ ========================================================================== */
+
+.thumbnav {
+    display: flex;
+    &__item {
+        display: flex;
+        &.uk-active {
+            .thumbnav {
+                &__link {}
+            }
+        }
+    }
+    &__link {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: #eee;
+        &:hover {}
+        &:focus {}
+    }
+}
+
+/* ========================================================================
+   Component: Dotnav
+ ========================================================================== */
+
+.dotnav {
+    display: flex;
+    justify-content: center;
+    li {
+        flex: none;
+        padding: 0 0.3125rem;
+        a {
+            display: block;
+            width: 1.3125rem;
+            height: 1.3125rem;
+
+            border-radius: 50%;
+            border-width: 0.125rem;
+            border-style: solid;
+            border-color: $primary;
+            background: transparent;
+
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+
+            /* Hover + Focus */
+            &:hover, &:focus {
+                background-color: link-hover($primary);
+                outline: none;
+            }
+            /* OnClick */
+            &:active {
+                background-color: $dotnav-item-onclick-background;
+            }
+        }
+        /* Active */
+        &.uk-active {
+            a {
+                background-color: $primary;
+            }
+        }
+    }
+    &--white {}
+    &--yellow {}
+}
+
+
+
+

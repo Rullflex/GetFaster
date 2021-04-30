@@ -1,0 +1,24 @@
+# Файлы и папки операционной системы
+.DS_Store
+Thumbs.db
+
+# Файлы редактора
+.idea
+*.sublime*
+.vscode
+
+# Вспомогательные файлы
+*.log*
+node_modules/
+reports/
+
+# Папка с собранными файлами проекта
+build assets/
+build/
+.editorconfig
+.eslintignore
+.eslintrc.json
+# .gitattributes
+# .gitignore
+.pug-lint.json
+.stylelintrc.json

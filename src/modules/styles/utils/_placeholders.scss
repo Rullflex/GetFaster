@@ -1,0 +1,45 @@
+%btn{
+    background-color: #fff;
+    @extend %gil-700;
+    font-size: 26px;
+    line-height: 36px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .3s;
+    border-radius: 10px;
+    &:hover{
+      color: #fff;
+      background-color: $accent;
+    }
+}
+  
+%gil-400{
+    font-family: 'Gilroy', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 400;
+}
+
+%gil-500{
+    font-family: 'Gilroy', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+}
+
+%gil-600{
+    font-family: 'Gilroy', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+}
+
+%gil-700{
+    font-family: 'Gilroy', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+}
+
+%pop-600{
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+}
+
+%pop-500{
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+}

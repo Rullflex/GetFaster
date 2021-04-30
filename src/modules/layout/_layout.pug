@@ -1,0 +1,33 @@
+include _mixins
+include _vars
+
+doctype html
+html.no-js(lang="de")
+	head
+		block head
+			//- если js есть - убирает класс no-js
+			//- если 
+			//- script(type="module").
+				document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');
+			
+			meta(charset="UTF-8")
+			meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+			meta(name="format-detection" content="telephone=no")
+			meta(content="ie=edge" http-equiv="x-ua-compatible")
+			meta(property="og:image" content=`/ogimage.jpg`)
+			
+			link(rel="stylesheet" href!=stylesPath)
+
+			include includes/_favicon
+			include includes/_metrika
+	body
+		.app-wrapper
+			block header
+				include widgets/_header
+			block content
+			block footer
+				include widgets/_footer
+			block popup
+				include widgets/_popups
+		block scripts
+			script(src!=scriptsPath defer)

@@ -1,0 +1,15 @@
+@function link-hover($color) {
+    @return lighten($color, 15%);
+}
+
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+  }
+  @function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+  }
+// y = kx + b измением выходной параметр в зависимости от изменяемого x
+@function linear-progression($coef, $x, $startPoint) {
+    $result: calc($coef * $x + $startPoint);
+    @return $result;
+}
