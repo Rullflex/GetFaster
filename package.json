@@ -83,5 +83,5 @@
     "src/js/**/*.js",
     "src/img/**/*.svg",
     "src/styles/**/*.{sass,scss}"
-  ],
+  ]
 }

@@ -20,6 +20,7 @@
             }
         }
         &[aria-expanded=true]{
+            z-index: 1030;
             i {
                 &:nth-child(1) {
                     opacity: 0;
@@ -42,5 +43,6 @@
         background: #f8f8f8;
         color: #666;
         margin: 0;
+        top: 0 !important;
     }
 }

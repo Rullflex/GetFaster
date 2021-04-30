@@ -300,35 +300,31 @@
 
 .advantages{
   background-color: #fbfbfb;
-  
+  .container{
+    padding-right: 0;
+  }
   &__title{
-    margin-bottom: 1.25rem;
-    max-width: 45rem;
+    font-size: 1.9375rem;
+    line-height: 2.625rem;
+    margin-bottom: 1.875rem;
+    max-width: 20rem;
   }
   &__subtitle{
-    font-size: 1.625rem;
-    line-height: 2.25rem;
-    margin-bottom: 2.1875rem;
-    display: block;
+    
+    display: none;
   }
   &__items{
     display: flex;
     
   }
   &__item{
-    max-width: 16.25rem;
+    max-width: 100%;
     position: relative;
     &::after{
-      content: '';
-      position: absolute;
-      width: 5.75rem;
-      height: 1px;
-      background-color: #dbdbdb;
-      top: 1.75rem;
-      right: -0.75rem;
+      display: none;
     }
     &:not(:last-child){
-      margin-right: 150px;
+      margin-right: 80px;
     }
     &:last-child::after{
       display: none;
@@ -360,10 +356,14 @@
     background-image: url('../images/berry.png');
     background-repeat: no-repeat;
     background-position: right 200px bottom 50px;
-    
+    .container{
+      padding-right: 30px;
+    }
     &__title{
       margin-bottom: 1.25rem;
       max-width: 45rem;
+      font-size: 3.75rem;
+      line-height: 4.75rem;
     }
     &__subtitle{
       font-size: 1.625rem;
@@ -380,6 +380,7 @@
       position: relative;
       &::after{
         content: '';
+        display: block;
         position: absolute;
         width: 5.75rem;
         height: 1px;
