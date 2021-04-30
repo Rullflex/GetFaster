@@ -225,13 +225,13 @@ block content
 			.container
 				.products__inner
 					ul.products__buttons(data-uk-switcher="animation: uk-animation-fade;")
-						li
+						li.products__buttons-item
 							a.products__btn
 								| OBST
-						li
+						li.products__buttons-item
 							a.products__btn
 								| GEM&uuml;SE
-						li
+						li.products__buttons-item
 							a.products__btn
 								| Getr&auml;nken
 					ul.products__items.uk-switcher
@@ -363,6 +363,9 @@ block content
 					li.lage__button
 						a(href='#').lage__btn Hilden
 						span.lage__btn-desc ab 30 Min
+				.lage__desc
+					.lage__desc-title Lieferung:
+					p ab 120 Min  
 				ul.lage__map.uk-switcher
 					- for(var i = 1; i <= 9; i++)
 						li.ibg
@@ -574,11 +577,11 @@ block content
 					| Bekannt aus:
 				.partners__inner
 					a.partners__link(href='#')
-						+picture(png, `${assets}partners/1`, 'n')
+						+picture(png, `${assets}partners/1`, 'n').partners__link-img
 					a.partners__link(href='#')
-						+picture(png, `${assets}partners/2`, 'n')
+						+picture(png, `${assets}partners/2`, 'n').partners__link-img
 					a.partners__link(href='#')
-						+picture(png, `${assets}partners/3`, 'n')
+						+picture(png, `${assets}partners/3`, 'n').partners__link-img
 		.offer
 			.container
 				.offer__inner
@@ -593,6 +596,7 @@ block content
 								|  Euro Mindestbestellwert
 							p.offer__content-code
 								| Gutscheincode: GETSTART
+							p.offer__content-date nur bis 9. Mai
 					.offer__app
 						.offer__app-title
 							| Hol dir jetzt die GetFaster-App!

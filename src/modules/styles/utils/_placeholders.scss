@@ -1,15 +1,13 @@
 %btn{
     background-color: #fff;
     @extend %gil-700;
-    font-size: 26px;
     line-height: 36px;
     border: none;
     cursor: pointer;
     text-transform: uppercase;
     transition: all .3s;
-    border-radius: 10px;
     &:hover{
-      color: #fff;
+      color: #fff !important;
       background-color: $accent;
     }
 }
