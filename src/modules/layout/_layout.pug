@@ -16,7 +16,7 @@ html.no-js(lang="de")
 			meta(content="ie=edge" http-equiv="x-ua-compatible")
 			meta(property="og:image" content=`/ogimage.jpg`)
 			
-			link(rel="stylesheet" href!=stylesPath)
+			link(rel="stylesheet" href!=`${stylesPath}?v=0.0.1`)
 
 			include includes/_favicon
 			include includes/_metrika
@@ -30,4 +30,4 @@ html.no-js(lang="de")
 			block popup
 				include widgets/_popups
 		block scripts
-			script(src!=scriptsPath defer)
+			script(src!=`${scriptsPath}?v=0.0.1` defer)
