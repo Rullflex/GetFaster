@@ -10,7 +10,7 @@ block header
 			.header__inner
 				.header__logo
 					a.logo
-						+picture(png, `${assets}logo`, 'n')(alt='logo')
+						+picture-min(png, `${assets}logo`, `${assets}logo`, 'n')(alt='logo')
 					a.header__link(href='#') Lieferst&auml;dte
 				.header__info
 					p.header__info-text
@@ -95,10 +95,10 @@ block footer
 					ul.footer__bottom-social
 						li.footer__bottom-social-item
 							a.footer__bottom-social-link(href='#' data-mob-any)
-								+picture(png, `${assets}phone/google-play`, 'n').google-play
+								+picture-min(png, `${assets}phone/google-play`, `${assets}phone/google-play`, 'n').google-play
 						li.footer__bottom-social-item
 							a.footer__bottom-social-link(href='#' data-mob-ios)
-								+picture(png, `${assets}phone/app-store`, 'n').app-store
+								+picture-min(png, `${assets}phone/app-store`, `${assets}phone/app-store`, 'n').app-store
 						li.footer__bottom-social-item
 							a.footer__bottom-social-link(href='#')
 								+picture(png, `${assets}fb`, 'n')
@@ -142,13 +142,13 @@ block content
 								p Hol dir jetzt die
 								p GetFaster-App!
 							a.phone__app-load(href='#' data-mob-any)
-								+picture(png, `${assets}phone/google-play`, 'n')(alt='google-play')
+								+picture-min(png, `${assets}phone/google-play`, `${assets}phone/google-play`, 'n')(alt='google-play')
 							a.phone__app-load(href='#' data-mob-ios)
-								+picture(png, `${assets}phone/app-store`, 'n')(alt='app-store')
+								+picture-min(png, `${assets}phone/app-store`, `${assets}phone/app-store`, 'n')(alt='app-store')
 					.phone__shop
 						.phone__shop-frame
-							+picture(png, `${assets}phone/phone`, 'n')(alt='phone-image').phone-frame
-							+picture(png, `${assets}phone/screen`, 'n').phone-screen
+							+picture-min(png, `${assets}phone/phone`, `${assets}phone/phone`, 'n')(alt='phone-image').phone-frame
+							+picture-min(png, `${assets}phone/screen`, `${assets}phone/screen`, 'n').phone-screen
 		section.advantages
 			.container
 				h2.advantages__title.title
