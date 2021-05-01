@@ -547,7 +547,6 @@
 
 .products{
   padding-bottom: 3.75rem;
-
   &__title{
     padding-left: 1.875rem;
     padding-right: 0.9375rem;
@@ -596,14 +595,15 @@
     }
   }
   &__item{
-    width: 14.5rem;
-    height: 14.5rem;
+    position: relative;
+    width: 6.75rem;
+    height: 6.75rem;
     background-color: #fff;
     box-shadow: 0px 34px 81px 0px rgba(149, 149, 149, 0.08);
     border-radius: 10px;
   }
   &__item-content{
-    padding-top: 2.5rem;
+    padding-top: 0.625rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -615,8 +615,8 @@
     &::before{
       content: '';
       position: absolute;
-      right: 1.5rem;
-      top: 1.25rem;
+      right: 0.9375rem;
+      top: 0.6875rem;
       background-image: url('../images/products/vegan.png');
       background-repeat: no-repeat;
       width: 1.9375rem;
@@ -624,7 +624,7 @@
     }
     &::after{
       background-image: url('../images/products/gluten.png');
-      top: 52px;
+      top: 1.9375rem;
       width: 1.5625rem;
       height: 1.5625rem;
     }
@@ -635,8 +635,8 @@
       position: absolute;
       width: 1.625rem;
       height: 1.625rem;
-      right: 1.1875rem;
-      top: 1.0625rem;
+      right: 0.8125rem;
+      top: 0.5625rem;
       background-image: url('../images/products/dairy.png');
     }
   }
@@ -647,41 +647,50 @@
       width: 2rem;
       height: 1.75rem;
       background-image: url('../images/products/bio.png');
-      right:1.5625rem;
-      top: 1.125rem;
+      right:0.625rem;
+      top: 0.625rem;
     }
   }
   &__item-image{
-    margin-bottom: 0.9375rem;
+    
+    max-width: 3.125rem;
+  }
+  .wine{
+    max-width: 1.25rem;
   }
   &__item-price{
+    position: absolute;
+    bottom: 1.0625rem;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
     color: #bebebe;
-    font-size: 30px;
-    line-height: 2.25rem;
+    font-size: 0.875rem;
+    line-height: 1rem;
     font-weight: 600;
     @include flex-center;
   }
   .sale{
     position: absolute;
-    right: 20px;
-    top: -20px;
-    width: 5rem;
-    height: 2.375rem;
+    right: 0.8125rem;
+    top: -13px;
+    width: 2.8125rem;
+    height: 1.375rem;
     background-color: #ea2222;
     color: #fff;
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 0.6875rem;
+    line-height: 0.9375rem;
     font-weight: 700;
     border-radius: 5px;
     @include flex-center;
   }
   .price{
     font-weight: 600;
-    font-size: 16px;
-    line-height: 1.1875rem;
+    font-size: 0.4375rem;
+    line-height: 0.5625rem;
     color: #bebebe;
     text-decoration: line-through;
-    padding-right: 0.6875rem;
+    padding-right: 0.25rem;
   }
   &__app-title{
     font-size: 1.375rem;
@@ -756,6 +765,7 @@
     background-color: #fff;
     box-shadow: 0px 34px 81px 0px rgba(149, 149, 149, 0.08);
     border-radius: 10px;
+    position: relative;
   }
   &__item-content{
     padding-top: 2.5rem;
@@ -808,8 +818,16 @@
   }
   &__item-image{
     margin-bottom: 0.9375rem;
+    max-width: 100%;
+  }
+  .wine{
+    max-width: 100%;
   }
   &__item-price{
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
     color: #bebebe;
     font-size: 30px;
     line-height: 2.25rem;
@@ -1273,6 +1291,15 @@
     flex-direction: column;
     align-items: center;
   }
+
+  &__bg{
+    position: absolute;
+    bottom: 10.625rem;
+    right: 0;
+    width: 8.25rem;
+    height: 9.75rem;
+    z-index: 20;
+  }
 }
 
 @media (min-width: map-get($grid-breakpoints, lg)){
@@ -1430,7 +1457,6 @@
       height: 15px;
       width: 3px;
       right: 41px;
-      top: 40px;
     }
     &::after{
       right: 50px;
@@ -1551,6 +1577,9 @@
   &__bottom-text{
     text-align: center;
   }
+  &__bottom-time{
+    text-align: center;
+  }
 }
 
 @media (min-width: map-get($grid-breakpoints, lg)){
@@ -1622,6 +1651,9 @@
   &__bottom-lang,
   &__bottom-time{
     padding-left: 7.5rem;
+  }
+  &__bottom-time{
+    text-align: left;
   }
   &__bottom-lang-link{
     font-size: 20px;
