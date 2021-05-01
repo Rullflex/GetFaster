@@ -92,7 +92,7 @@ $grid-breakpoints: (
 
 $container-max-widths: (
     sm: 420px,
-    md: 480px,
+    md: 563px,
     lg: 1230px
 );
 
@@ -100,7 +100,7 @@ $container-max-widths: (
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           60px !default;
+$grid-gutter-width:           3.75rem !default;
 $grid-row-columns:            6 !default;
 $embed-responsive-aspect-ratios: () !default;
 

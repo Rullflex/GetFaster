@@ -94,10 +94,10 @@ block footer
 				.footer__bottom-inner
 					ul.footer__bottom-social
 						li.footer__bottom-social-item
-							a.footer__bottom-social-link(href='#')
+							a.footer__bottom-social-link(href='#' data-mob-any)
 								+picture(png, `${assets}phone/google-play`, 'n').google-play
 						li.footer__bottom-social-item
-							a.footer__bottom-social-link(href='#')
+							a.footer__bottom-social-link(href='#' data-mob-ios)
 								+picture(png, `${assets}phone/app-store`, 'n').app-store
 						li.footer__bottom-social-item
 							a.footer__bottom-social-link(href='#')
@@ -226,13 +226,13 @@ block content
 				.products__inner
 					ul.products__buttons(data-uk-switcher="animation: uk-animation-fade;")
 						li.products__buttons-item
-							a.products__btn
+							a.products__btn(href='#')
 								| OBST
 						li.products__buttons-item
-							a.products__btn
+							a.products__btn(href='#')
 								| GEM&uuml;SE
 						li.products__buttons-item
-							a.products__btn
+							a.products__btn(href='#')
 								| Getr&auml;nken
 					ul.products__items.uk-switcher
 						- for(var i=0; i < 3; i++)
@@ -328,11 +328,11 @@ block content
 				.products__app-title
 					| Probier es mit GetFaster!
 				.products__app-load
-					a.products__app-link(href='#')
+					a.products__app-link(href='#' data-mob-any)
 						+picture(png, `${assets}products/google`, 'n')
-					a.products__app-link(href='#')
+					a.products__app-link(href='#' data-mob-ios)
 						+picture(png, `${assets}products/app`, 'n')
-		section.lage
+		section.lage#lage
 			.container
 				h2.lage__title.title Lieferzone
 				ul.lage__buttons(data-uk-switcher="animation: uk-animation-fade;")
@@ -571,7 +571,7 @@ block content
 									| wieder einkaufen!
 								a.reviews__item-link(href='#')
 									+picture(png, `${assets}reviews/play`, 'n')
-		.partners
+		section.partners#partners
 			.container
 				h2.partners__title.title
 					| Bekannt aus:
@@ -582,7 +582,7 @@ block content
 						+picture(png, `${assets}partners/2`, 'n').partners__link-img
 					a.partners__link(href='#')
 						+picture(png, `${assets}partners/3`, 'n').partners__link-img
-		.offer
+		section.offer
 			.container
 				.offer__inner
 					.offer__content
@@ -601,11 +601,11 @@ block content
 						.offer__app-title
 							| Hol dir jetzt die GetFaster-App!
 						.offer__app-load
-							a.products__app-link(href='#')
+							a.products__app-link(href='#' data-mob-any)
 								+picture(png, `${assets}products/google`, 'n')
-							a.products__app-link(href='#')
+							a.products__app-link(href='#' data-mob-ios)
 								+picture(png, `${assets}products/app`, 'n')
-		.tabs
+		section.tabs#faq
 			.container
 				h2.tabs__title.title
 					| FAQ

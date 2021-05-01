@@ -14,6 +14,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     })
     UIkit.slider(`.advantages__slider`)
     UIkit.slider(`.reviews__slider`)
+    
     if (app.isMobile.iOS()) {
         document.querySelectorAll(`[data-mob-any]`).forEach(el => el.classList.add('d-none'))
     } else {

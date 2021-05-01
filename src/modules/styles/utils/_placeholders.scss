@@ -1,14 +1,25 @@
+%btn-active{
+    color: #fff !important;
+    background-color: $accent;
+}
 %btn{
     background-color: #fff;
     @extend %gil-700;
-    line-height: 36px;
+    line-height: 2.25rem;
     border: none;
     cursor: pointer;
     text-transform: uppercase;
     transition: all .3s;
-    &:hover{
+    user-select: none;
+    &:active, &.uk-active, &[aria-expanded=true], &:focus-visible {
       color: #fff !important;
       background-color: $accent;
+    }
+    @media (min-width: map-get($grid-breakpoints, lg)){
+        &:hover {
+            color: #fff !important;
+            background-color: $accent;
+        }
     }
 }
   

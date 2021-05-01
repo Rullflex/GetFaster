@@ -2,7 +2,6 @@
 .header{
   background: #fbfbfb;
   &.uk-active {
-
     box-shadow: 1px 2px 4px rgba(0,0,0, 0.2);
   }
   &__inner{
@@ -15,6 +14,7 @@
   &__logo{}
   .logo{
     img {
+      height: 2.75rem;
       width: 12.5rem;
     }
   }
@@ -31,7 +31,6 @@
 @media (min-width: map-get($grid-breakpoints, lg)) {
   .header{
     box-shadow: unset;
-    background-color: #fbfbfb;
     &__inner{
       padding-top: 2.5rem;
       padding-bottom: 3.75rem;
@@ -57,6 +56,7 @@
       font-size: 1.125rem;
     }
     &__info {
+      line-height: 1em;
       display: block;
     }
     &__info-text{
@@ -126,6 +126,7 @@
     order:1;
   }
   &__app{
+    height: 3.75rem;
     order: 3;
     display: flex;
     flex-direction: column;
@@ -275,7 +276,6 @@
 }
 
 .advantages{
-  background-color: #fbfbfb;
   .container{
     padding-right: 0;
   }
@@ -326,7 +326,6 @@
 }
 @media (min-width: map-get($grid-breakpoints, lg)) {
   .advantages{
-    background-color: #fbfbfb;
     background-image: url('../images/berry.png');
     background-repeat: no-repeat;
     background-position: right 200px bottom 50px;
@@ -391,7 +390,6 @@
 
 .info{
   padding-bottom: 4.375rem;
-  background-color: #fbfbfb;
   padding-top: 4.375rem;
   position: relative;
   &__bottle-decor{
@@ -469,7 +467,6 @@
 @media (min-width: map-get($grid-breakpoints, lg)){
   .info{
     padding-bottom: 6.25rem;
-    background-color: #fbfbfb;
     padding-top: 7.5rem;
     position: relative;
     &__bottle-decor{
@@ -542,7 +539,6 @@
 }
 
 .products{
-  background-color: #fbfbfb;
   padding-bottom: 3.75rem;
 
   &__title{
@@ -556,7 +552,6 @@
   }
   &__items{
     position: relative;
-    height: 500px;
     margin-bottom: 3.125rem;
   }
   &__items-top{
@@ -571,12 +566,13 @@
     left: -100px;
   }
   &__item{
+    user-select: none;
     display: block;
     margin-right: 1.875rem;
   }
   &__buttons{
     @include flex-center;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   &__btn{
@@ -655,7 +651,7 @@
     color: #bebebe;
     font-size: 30px;
     line-height: 2.25rem;
-    @extend %gil-600;
+    font-weight: 600;
     @include flex-center;
   }
   .sale{
@@ -668,12 +664,12 @@
     color: #fff;
     font-size: 20px;
     line-height: 27px;
-    @extend %gil-700;
+    font-weight: 700;
     border-radius: 5px;
     @include flex-center;
   }
   .price{
-    @extend %gil-600;
+    font-weight: 600;
     font-size: 16px;
     line-height: 1.1875rem;
     color: #bebebe;
@@ -692,12 +688,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 5.0625rem;
   }
 }
 
 @media (min-width: map-get($grid-breakpoints, lg)){
   .products{
-  background-color: #fbfbfb;
   padding-bottom: 8.125rem;
   &__inner{
     
@@ -840,7 +836,7 @@
   }
   &__app-load{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: row;
     justify-content: center;
   }
@@ -854,11 +850,9 @@
 }
 
 .lage{
-  background-color: #fbfbfb;
   padding-bottom: 7.5rem;
   &__title{
-    text-align: center;
-    margin-bottom: 1rem;
+    font-size: 2rem;
   }
   &__buttons{
     display: flex;
@@ -884,9 +878,12 @@
     display: none;
   }
   &__map {
-    img {
-      @include center-item-x('relative');
+    width: 100vw;
+    @include center-item-x('relative');
+    li {
+      height: 35.625rem;
     }
+
   }
   &__desc{
     font-size: 1.375rem;
@@ -905,7 +902,6 @@
 
 @media (min-width: map-get($grid-breakpoints, lg)){
   .lage{
-  background-color: #fbfbfb;
   padding-bottom: 7.5rem;
   &__title{
     text-align: center;
@@ -952,54 +948,65 @@
     }
   }
   &__map {
-    img {
-      @include center-item-x('relative');
+    li {
+      height: 849px;
     }
   }
 }
 }
 
 .reviews{
-  background-color: #fbfbfb;
   &__title{
     font-size: 2.125rem;
     line-height: 2.875rem;
     max-width: 16.875rem;
+    margin-bottom: 1rem;
+  }
+  &__slider {
+
+    overflow: visible
   }
   &__inner{
     // height: 900px;
     display: flex;
+    align-items: flex-start;
     // flex-direction: column;
-    // flex-wrap: wrap;
+    // flex-wrap: wrap;;
   }
   &__item{
-    width: 270px;
+    width: 16.875rem;
     padding: 1.875rem;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     background-color: #fff;
     margin-right: 1.875rem;
     margin-bottom: 1.875rem;
-    &:last-child,
-    &:nth-child(7){
-      margin-right: 0;
-    }
+    box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.04);
+  
     &:nth-child(3){
       .reviews__item-text{
-        max-width: 180px;
+        max-width: 11.25rem;
       }
     }
-  }
-  &__item-human{
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.25rem;
+    &-human {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    &-photo {
+      width: 4.5rem;
+    }
+    &-link {
+      img.lazyloaded {
+        width: 11.875rem;
+      }
+    }
   }
   &__item-desc{
     margin-left: 1.3125rem;
   }
   &__item-name{
-    margin-bottom: 5px;
-    font-size: 20px;
+    margin-bottom: 0.3125rem;
+    font-size: 1.25rem;
     line-height: 1.75rem;
     @extend %gil-700;
   }
@@ -1008,24 +1015,23 @@
   }
   .star{
     &:not(:last-child){
-      margin-right: 4px;
+      margin-right: 0.25rem;
     }
   }
   &__item-title{
     @extend %gil-700;
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 5px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.3125rem;
   }
   &__item-text{
-    line-height: 25px;
-    margin-bottom: 15px;
+    line-height: 1.5625rem;
+    margin-bottom: 0.9375rem;
   }
 }
 
 @media (min-width: map-get($grid-breakpoints, lg)){
   .reviews{
-  background-color: #fbfbfb;
   &__title{
     text-align: center;
     margin-bottom: 2.5rem;
@@ -1034,10 +1040,10 @@
     max-width: 100%;
   }
   &__inner{
-    // height: 900px;
+    height: 900px;
     display: flex;
-    // flex-direction: column;
-    // flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
   &__item{
     width: 270px;
@@ -1090,7 +1096,6 @@
 }
 
 .partners{
-  background-color: #fbfbfb;
   padding-bottom: 3.125rem;
   &__title{
     text-align: center;
@@ -1099,6 +1104,7 @@
     line-height: 2.75rem;
   }
   &__inner{
+    height: 4.875rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1108,7 +1114,7 @@
     &:not(:nth-child(2)){
       margin-bottom: 0.9375rem;
     }
-    img{
+    &-img.lazyloaded{
       width: 7.8125rem;
     }
     &:first-child{
@@ -1116,13 +1122,13 @@
     }
     &:nth-child(2){
       order: 3;
-      img{
+      .partners__link-img.lazyloaded{
         width: 12.1875rem;
       }
     }
     &:last-child{
       order: 2;
-      img{
+      .partners__link-img.lazyloaded{
         width: 4.8125rem;
       }
     }
@@ -1131,7 +1137,6 @@
 
 @media (min-width: map-get($grid-breakpoints, lg)){
   .partners{
-  background-color: #fbfbfb;
   padding-bottom: 3.125rem;
   &__title{
     text-align: center;
@@ -1140,14 +1145,14 @@
     line-height: 4.75rem;
   }
   &__inner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
+    height: 3.4375rem;
   }
   &__link{
     position: relative;
     padding-left: 2.8125rem;
+    &-img.lazyloaded {
+      width: unset;
+    }
     &::before{
       content: '';
       position: absolute;
@@ -1162,7 +1167,7 @@
         top: -11px;
       }
       order: 2;
-      img{
+      .partners__link-img.lazyloaded{
         width: 100%;
       }
     }
@@ -1182,7 +1187,7 @@
     }
     &:last-child{
       order: 3;
-      img{
+      .partners__link-img.lazyloaded{
         width: 100%;
       }
     }
@@ -1322,13 +1327,12 @@
   &__app-load{
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
   }
 }
 }
 
-.tabs{
-  background-color: #fbfbfb;
+.tabs {
   padding: 3.75rem 0;
   &__title{
     text-align: center;
@@ -1340,47 +1344,47 @@
     background-color: #fff;
     border-radius: 10px;
     padding-left: 1.875rem;
-    cursor: pointer;
+    box-shadow: 0px 0px 17px 0 rgba(0, 0, 0, 0.05);
+
     &:not(:last-child){
       margin-bottom: 1.25rem;
     }
   }
   &__item-title{
     font-size: 1.125rem;
-    max-width: 10rem;
     line-height: 1.625rem;
-    padding: 15px 0;
+    padding: 0.9375rem 5rem 0.9375rem 0;
     @extend %gil-500;
     position: relative;
     &::after,
     &::before{
       content: '';
-      position: absolute;
-      height: 15px;
-      width: 3px;
+      height: 0.625rem;
+      width: 0.125rem;
       background-color: $accent;
-      right: 41px;
-      top: 40px;
-      transform: rotate(45deg);
+      right: 1.25rem;
       border-radius: 5px;
       transition: all .3s;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      transform-origin: center center;
     }
     &::after{
-      right: 50px;
-      transform: rotate(-45deg);
+      right: 1.625rem;
+      transform: translateY(-50%) rotate(-45deg);
     }
-    &.tabs__item-title--active{
+    &[aria-expanded=true]{
       &::after{
-        transform: rotate(45deg);
+        transform: translateY(-50%) rotate(45deg);
       }
       &::before{
-        transform: rotate(-45deg);
+        transform: translateY(-50%) rotate(-45deg);
       }
     }
   }
   &__item-content{
     padding-bottom: 2.5rem;
-    display: none;
   }
   &__item-text{
     max-width: 49.375rem;
@@ -1391,7 +1395,6 @@
 
 @media (min-width: map-get($grid-breakpoints, lg)){
   .tabs{
-  background-color: #fbfbfb;
   padding: 8.75rem 0;
   &__title{
     text-align: center;
@@ -1405,7 +1408,6 @@
     background-color: #fff;
     border-radius: 10px;
     padding-left: 2.9375rem;
-    cursor: pointer;
     &:not(:last-child){
       margin-bottom: 1.25rem;
     }
@@ -1418,27 +1420,18 @@
     max-width: 100%;
     &::after,
     &::before{
-      content: '';
-      position: absolute;
       height: 15px;
       width: 3px;
-      background-color: $accent;
       right: 41px;
       top: 40px;
-      transform: rotate(45deg);
-      border-radius: 5px;
-      transition: all .3s;
     }
     &::after{
       right: 50px;
-      transform: rotate(-45deg);
     }
     &.tabs__item-title--active{
       &::after{
-        transform: rotate(45deg);
       }
       &::before{
-        transform: rotate(-45deg);
       }
     }
   }
@@ -1454,7 +1447,7 @@
 }
 
 .footer{
-  padding: 35px 0;
+  padding: 2.1875rem 0;
   background-color: #fff;
   &__top{
     display: none;
@@ -1474,7 +1467,7 @@
     }
   }
   &__top-list-title{
-    font-size: 22px;
+    font-size: 1.375rem;
       @extend %pop-600;
       margin-bottom: 0.9375rem;
   }
@@ -1482,24 +1475,24 @@
     display: flex;
   }
   &__top-title{
-    font-size: 22px;
+    font-size: 1.375rem;
     @extend %pop-600;
     margin-bottom: 0.9375rem;
   }
   &__top-list-link{
-    @extend %gil-400;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 1.125rem;
     color: #2e2e2e;
     display: block;
   }
   &__bottom-social-link{
     
   }
-  .google-play{
-    width: 175px;
+  .google-play.lazyloaded{
+    width: 10.9375rem;
   }
-  .app-store{
-    width: 155px;
+  .app-store.lazyloaded{
+    width: 9.6875rem;
   }
   &__bottom-inner{
     display: flex;
@@ -1508,7 +1501,7 @@
   }
   &__bottom-social{
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
   &__bottom-social-item{
     &:not(:last-child){
@@ -1523,8 +1516,8 @@
     padding-left: 0;
   }
   &__bottom-lang-link{
-    font-size: 20px;
-    @extend %gil-700;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #2e2e2e;
     &:not(:last-child){
       margin-right: 0.9375rem;
@@ -1537,16 +1530,16 @@
   }
   &__bottom-time-title{
     display: block;
-    font-size: 20px;
-    @extend %gil-700;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
   &__bottom-mail{
     display: block;
     text-align: center;
-    @extend %gil-700;
+    font-weight: 700;
     color: #2e2e2e;
     text-decoration: underline;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
   &__bottom-text{
     text-align: center;
@@ -1590,15 +1583,17 @@
     font-size: 18px;
     color: #2e2e2e;
     display: block;
+    transition: $transition--hover;
+    &:hover {
+      color: link-hover($accent);
+    }
   }
   &__bottom-social-link{
     
   }
-  .google-play{
-    width: 175px;
+  .google-play.lazyloaded{
   }
-  .app-store{
-    width: 155px;
+  .app-store.lazyloaded{
   }
   &__bottom-inner{
     display: flex;
@@ -1626,6 +1621,10 @@
     color: #2e2e2e;
     &:not(:last-child){
       margin-right: 0.9375rem;
+    } 
+    transition: $transition--hover;
+    &:hover {
+      color: link-hover($accent);
     }
   }
   &__bottom-time{
