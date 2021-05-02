@@ -299,7 +299,7 @@
     display: flex;
   }
   &__item{
-    max-width: 100%;
+    max-width: 15.25rem;
     position: relative;
     &::after{
       display: none;
@@ -400,9 +400,7 @@
   padding-top: 4.375rem;
   position: relative;
   &__bottle-decor{
-    position: absolute;
-    top: -230px;
-    left: 0;
+    display: none;
   }
   &__items{
     display: flex;
@@ -480,6 +478,7 @@
       position: absolute;
       top: -230px;
       left: 0;
+      z-index: -4;
     }
     &__items{
       display: flex;
@@ -539,9 +538,20 @@
     &__item-title{
       font-size: 1.625rem;
       line-height: 2.375rem;
-      max-width: 230px; 
+      max-width: 15.625rem; 
       padding-left: 0;
     }
+  }
+}
+
+@media (max-width: 1700px){
+  .info{
+    &__bottle-decor{
+      top: 0;
+    }
+  }
+  .advantages{
+    background-position: right 0 bottom 50px;
   }
 }
 
@@ -1309,6 +1319,9 @@
     padding-right: 30px;
     padding-left: 30px;
   }
+  &__bg{
+    display: none;
+  }
   &__content-date{
     display: none;
   }
@@ -1493,11 +1506,6 @@
   &__top-list-item{
     margin-bottom: 0.625rem;
     display: flex;
-    &:first-child{
-      font-size: 22px;
-      @extend %pop-600;
-      margin-bottom: 0.9375rem;
-    }
   }
   &__top-list-title{
     font-size: 1.375rem;
@@ -1580,6 +1588,11 @@
   &__bottom-time{
     text-align: center;
   }
+  &__bottom-link{
+    text-align: center;
+    display: block;
+    margin-bottom: 0.3125rem;
+  }
 }
 
 @media (min-width: map-get($grid-breakpoints, lg)){
@@ -1599,14 +1612,10 @@
   &__top-list-item{
     margin-bottom: 0.625rem;
     display: flex;
-    &:first-child{
-      font-size: 22px;
-      margin-bottom: 0.9375rem;
-    }
   }
   &__top-list-title{
     font-size: 22px;
-      margin-bottom: 0.9375rem;
+    margin-bottom: 0.9375rem;
   }
   &__top-list-row{
     display: flex;
@@ -1685,6 +1694,9 @@
   }
   &__bottom-text{
     text-align: left;
+  }
+  &__bottom-link{
+    display: none;
   }
 }
 }

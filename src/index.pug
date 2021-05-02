@@ -22,26 +22,28 @@ block footer
 	footer.footer
 		.container
 			.footer__top
-				ul.footer__top-list
-					li.footer__top-list-item
-						| &Uuml;ber uns
-					li.footer__top-list-item
-						a.footer__top-list-link(href='#') Impressum
-					li.footer__top-list-item
-						a.footer__top-list-link(href='#') Datenschutz
-					li.footer__top-list-item
-						a.footer__top-list-link(href='#') AGB
-					li.footer__top-list-item
-						a.footer__top-list-link(href='#') Karriere
-				ul.footer__top-list
-					li.footer__top-list-item
-						| Services
-					li.footer__top-list-item
-						a.footer__top-list-link(href='#') Getr&auml;nkelieferung
-					li.footer__top-list-item
-						a.footer__top-list-link(href='#') Brotlieferung
-					li.footer__top-list-item
-						a.footer__top-list-link(href='#') Bier Lieferung
+				.footer__top-list-inner
+					.footer__top-title &Uuml;ber uns
+					.footer__top-list-row
+					ul.footer__top-list
+						li.footer__top-list-item
+							a.footer__top-list-link(href='#') Impressum
+						li.footer__top-list-item
+							a.footer__top-list-link(href='#') Datenschutz
+						li.footer__top-list-item
+							a.footer__top-list-link(href='#') AGB
+						li.footer__top-list-item
+							a.footer__top-list-link(href='#') Karriere
+				.footer__top-list-inner
+					.footer__top-title Services
+					.footer__top-list-row
+						ul.footer__top-list
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Getr&auml;nkelieferung
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Brotlieferung
+							li.footer__top-list-item
+								a.footer__top-list-link(href='#') Bier Lieferung
 				.footer__top-list-inner
 					.footer__top-list-title
 						| Lieferzone
@@ -119,6 +121,9 @@ block footer
 								| Mo.- Fr. 9:00 - 19:00 Uhr
 				a.footer__bottom-mail(href='mailto:support@getfaster.io')
 					| support@getfaster.io
+				a(href="#").footer__bottom-link Impressum
+				a(href="#").footer__bottom-link Datenschutz
+				a(href="#").footer__bottom-link AGB
 				p.footer__bottom-text
 					| &copy; GetFaster GmbH 2021
 block content
@@ -208,7 +213,7 @@ block content
 							p.info__item-title
 								| Sicher und
 								| Vertrauensvoll
-							button.info__link(data-uk-tooltip="Some Info")
+							button.info__link(data-uk-tooltip="Alle Produkte werden auf Haltbarkeitsdatum, Aussehen und Unversehrtheit der Verpackung überprüft, bevor sie in deinem Warenkorb landen.")
 								img.lazyload(src=`${assets}info/link.svg` alt='')
 					.info__item.info__item--cycle
 						p.info__item-title
