@@ -173,6 +173,15 @@
     left: 1.5rem;
     top: 0.9375rem;
   }
+  &-video {
+    border-radius: 1.5rem;
+    width: 16.875rem;
+    height: auto;
+    position: absolute;
+    left: 1.5rem;
+    top: 0.9375rem;
+    z-index: 5;
+  }
 }
 @media (min-width: map-get($grid-breakpoints, lg)) {
   .phone{
@@ -263,21 +272,14 @@
       height: 53.75rem;
     }
     .phone-frame{
-      position: absolute;
-      height: auto;
-      width: 33.75rem;
-      z-index: 3;
       left: -90px;
       top: -80px;
     }
     .phone-screen{
-      position: absolute;
-      object-fit: cover;
-      height: auto;
-      z-index: 4;
-      width: 16.875rem;
       left: 1rem;
-      top: 0.9375rem;
+    }
+    &-video {
+      left: 1rem;
     }
   }
 }
