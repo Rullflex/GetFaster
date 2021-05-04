@@ -97,7 +97,7 @@ block footer
 					ul.footer__bottom-social
 						li.footer__bottom-social-item
 							a.footer__bottom-social-link(href='#' data-mob-any)
-								+picture-min(png, `${assets}phone/google-play`, `${assets}phone/google-play`, 'n').google-play
+								+picture-min(png, `${assets}play-badge`, `${assets}play-badge`, 'n').google-play
 						li.footer__bottom-social-item
 							a.footer__bottom-social-link(href='#' data-mob-ios)
 								+picture-min(png, `${assets}phone/app-store`, `${assets}phone/app-store`, 'n').app-store
@@ -147,14 +147,14 @@ block content
 								p Hol dir jetzt die
 								p GetFaster-App!
 							a.phone__app-load(href='#' data-mob-any)
-								+picture-min(png, `${assets}phone/google-play`, `${assets}phone/google-play`, 'n')(alt='google-play')
+								+picture-min(png, `${assets}play-badge`, `${assets}play-badge`, 'n')(alt='google-play').play-badge
 							a.phone__app-load(href='#' data-mob-ios)
 								+picture-min(png, `${assets}phone/app-store`, `${assets}phone/app-store`, 'n')(alt='app-store')
 					.phone__shop
 						.phone__shop-frame
 							+picture-min(png, `${assets}phone/phone`, `${assets}phone/phone`, 'n')(alt='phone-image').phone-frame
 							+picture-min(png, `${assets}phone/screen`, `${assets}phone/screen`, 'n').phone-screen
-							video.phone-video(src="https://samokat.ru/samokat_720.0f74d1f2.mp4" width="270px" height="auto" playsinline="playsInline" muted="" loop="" autoplay="" preload="preload")
+							video.phone-video(src="assets/video.mp4" width="270px" height="auto" playsinline="playsInline" muted="" loop="" autoplay="" preload="preload")
 		section.advantages
 			.container
 				h2.advantages__title.title
@@ -335,7 +335,7 @@ block content
 					| Probier es mit GetFaster!
 				.products__app-load
 					a.products__app-link(href='#' data-mob-any)
-						+picture(png, `${assets}products/google`, 'n')
+						+picture(png, `${assets}play-badge`, 'n').play-badge
 					a.products__app-link(href='#' data-mob-ios)
 						+picture(png, `${assets}products/app`, 'n')
 		section.lage#lage
@@ -346,16 +346,19 @@ block content
 						a(href='#').lage__btn Berlin
 						span.lage__btn-desc ab 120 Min
 					li.lage__button
-						a(href='#').lage__btn D&uuml;sseldorf
+						a(href='#').lage__btn RATINGEN
+						span.lage__btn-desc ab 30 Min
+					li.lage__button
+						a(href='#').lage__btn Düsseldorf
 						span.lage__btn-desc ab 30 Min
 					li.lage__button
 						a(href='#').lage__btn essen
 						span.lage__btn-desc ab 30 Min
 					li.lage__button
-						a(href='#').lage__btn RATINGEN
+						a(href='#').lage__btn Gelsenkirchen
 						span.lage__btn-desc ab 30 Min
 					li.lage__button
-						a(href='#').lage__btn Gelsenkirchen
+						a(href='#').lage__btn Bottrop
 						span.lage__btn-desc ab 30 Min
 					li.lage__button
 						a(href='#').lage__btn Oberhausen
@@ -364,25 +367,21 @@ block content
 						a(href='#').lage__btn Gladbeck
 						span.lage__btn-desc ab 30 Min
 					li.lage__button
-						a(href='#').lage__btn Bottrop
-						span.lage__btn-desc ab 30 Min
-					li.lage__button
 						a(href='#').lage__btn Hilden
-						span.lage__btn-desc ab 30 Min
-				.lage__desc
-					.lage__desc-title Lieferung:
-					p ab 120 Min  
+						span.lage__btn-desc ab 30 Min 
 				ul.lage__map.uk-switcher
 					- for(var i = 1; i <= 9; i++)
 						li.lage__map-item
 							form.lage-step.lage-step--start.active.uk-animation-fade
-								.lage-step-title Überprüfe, wie schnell wir schon in deinen Stadtteil liefern
+								.lage-step-title  Leider beliefern wir diese Adresse noch nicht.
+								p.lage-step-text Gebe deine Email-Adresse#[br] ein, und wir informieren dich,#[br] sobald dein Stadtteil beliefert wird
 								.lage-step-input-wrap.input-wrap 
-									input.lage-step-input.input(type="text" name="zip" placeholder="Deine Postleitzahl")
-								button.btn.lage-step-btn(type="submit") prüfen
+									input.lage-step-input.input(type="text" name="zip" placeholder="Deine e-mail")
+								button.btn.lage-step-btn(type="submit") Bestätigen
+								a(href='#').lage-step-link PLZ ändern
 
 							.lage-step.lage-step--ok.uk-animation-fade
-								.lage-step-title Gute Nachrichten: Wir arbeiten#[br] schon in deinem Stadtteil.#[br] #[strong Lieferzeit ab 120 Min.]
+								.lage-step-title-show Gute Nachrichten: Wir arbeiten schon in deinem Stadtteil. #[strong Lieferzeit ab 120 Min.]
 
 							form.lage-step.lage-step--email.uk-animation-fade
 								.lage-step-title Gebe deine Email-Adresse#[br] ein, und wir informieren dich,#[br] sobald dein Stadtteil beliefert wird
@@ -627,7 +626,7 @@ block content
 							| Hol dir jetzt die GetFaster-App!
 						.offer__app-load
 							a.products__app-link(href='#' data-mob-any)
-								+picture(png, `${assets}products/google`, 'n')
+								+picture(png, `${assets}play-badge`, 'n').play-badge
 							a.products__app-link(href='#' data-mob-ios)
 								+picture(png, `${assets}products/app`, 'n')
 		section.tabs#faq

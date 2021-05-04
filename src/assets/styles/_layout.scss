@@ -144,6 +144,9 @@
     &:not(:nth-child(2)){
       padding-left: 0;
     }
+    .play-badge{
+      width: 210px;
+    }
   }
   &__shop{
     max-width: 19.375rem;
@@ -714,6 +717,11 @@
     align-items: center;
     height: 5.0625rem;
   }
+  &__app-link{
+    .play-badge{
+      width: 17.5rem;
+    }
+  }
   .bottle{
     max-width: 1.25rem;
   }
@@ -894,6 +902,7 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    padding-bottom: 2.1875rem;
   }
   &__button{
     display: flex;
@@ -905,27 +914,16 @@
     }
   }
   &__btn{
-    padding: 0.3125rem 0.8125rem;
-    border-radius: 0.3125rem;
-    @extend %btn;
     font-size: 1.0625rem;
+    line-height: 1.4375rem;
+    @extend %gil-700;
+    padding-right: 0.625rem;
+    text-transform: uppercase;
   }
   &__btn-desc{
     display: none;
   }
-  &__desc{
-    font-size: 1.375rem;
-    line-height: 2.25rem;
-    margin-bottom: 1.875rem;
-    p{
-      padding-left: 0.625rem;
-      @extend %gil-700;
-      display: inline;
-    }
-  }
-  &__desc-title{
-    display: inline-block;
-  }
+
   &__map {
     width: 23.75rem;
     @include center-item-x('relative');
@@ -946,28 +944,57 @@
     &:not(.active) {
       display: none;
     }
-    &-title {}
+    &-title {
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+      @extend %gil-700;
+      max-width: 13.75rem;
+      margin-bottom: 0.9375rem;
+    }
+    &-title-show{
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+      max-width: 16.875rem;
+    }
+    &-text{
+      line-height: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
     &-input {
       &-wrap {}
       width: 17.25rem;
       height: 4.5rem;
 
       background: #eee;
-
+      
       text-align: center;
+      margin-bottom: 0.75rem;
+      border-radius: 0.625rem;
+      &::placeholder{
+        font-size: 0.9375rem;
+        line-height: 1.625rem;
+        color: #c2c2c2;
+      }
+
     }
     &-btn {
       width: 17.25rem;
       line-height: 4.5rem;
+      @extend %gil-700;
 
       background: $accent;
-      &:active {}
-      &:hover {
-        // == :active
-      }
-      &:focus-visible {
-        // == :active
-      }
+      border-radius: 0.625rem;
+
+      margin-bottom: 0.75rem;
+      font-size: 1.125rem;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    &-link{
+      font-size: 0.9375rem;
+      line-height: 1.625rem;
+      color: $accent;
+      text-decoration: underline;
     }
   }
   &-map {}
@@ -982,28 +1009,24 @@
     font-size: 3.75rem;
     line-height: 4.875rem;
   }
-  &__desc{
-    display: none;
-  }
   &__buttons{
+    margin: 0 auto;
+    max-width: 68.875rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 30px;
   }
   &__button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 1.25rem;
     &:not(:last-child){
       margin-right: 3.125rem;
     }
   }
   &__btn{
-    padding: 12px 23px;
     font-size: 1.625rem;
-    border-radius: 0.625rem;
   }
   &__btn-desc{
     padding-left: 19px;
@@ -1021,7 +1044,73 @@
     }
   }
   &__map {
+    width: 31.875rem;
   }
+  &-step {
+    padding: 2rem;
+    display: block;
+
+    background: white;
+    box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.04);
+
+    text-align: left;
+    &:not(.active) {
+      display: none;
+    }
+    &-title {
+      font-size: 1.375rem;
+      line-height: 2.0625rem;
+      max-width: 16.875rem;
+      margin-bottom: 0.9375rem;
+    }
+    &-title-show{
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+      max-width: 16.875rem;
+    }
+    &-text{
+      line-height: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    &-input {
+      &-wrap {}
+      width: 21.875rem;
+      height: 5.8125rem;
+
+      background: #eee;
+      
+      text-align: center;
+      margin-bottom: 0.75rem;
+      border-radius: 0.625rem;
+      &::placeholder{
+        font-size: 1.125rem;
+        line-height: 2.0625rem;
+        color: #c2c2c2;
+      }
+
+    }
+    &-btn {
+      width: 21.875rem;
+      height: 5.8125rem;
+
+      background: $accent;
+      border-radius: 0.625rem;
+
+      margin-bottom: 0.75rem;
+      font-size: 1.4375rem;
+      line-height: 2.0625rem;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    &-link{
+      font-size: 0.9375rem;
+      line-height: 1.625rem;
+      color: $accent;
+      text-decoration: underline;
+    }
+  }
+  &-map {}
+  
 }
 }
 
@@ -1334,9 +1423,8 @@
   &__app-load{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
   }
-
   &__bg{
     position: absolute;
     bottom: 10.625rem;
@@ -1345,6 +1433,7 @@
     height: 9.75rem;
     z-index: 20;
   }
+  
 }
 
 @media (min-width: map-get($grid-breakpoints, lg)){
@@ -1567,7 +1656,7 @@
     
   }
   .google-play.lazyloaded{
-    width: 10.9375rem;
+    width: 12.1875rem;
   }
   .app-store.lazyloaded{
     width: 9.6875rem;
@@ -1579,6 +1668,7 @@
   }
   &__bottom-social{
     display: flex;
+    align-items: center;
     margin-bottom: 1.875rem;
   }
   &__bottom-social-item{
