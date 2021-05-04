@@ -474,11 +474,11 @@ class Form extends App {
 
     init(form = `form`) {
         validate.validators.isMaskComplete = (value, options, key, attributes) => {
-            if (key == "Телефон" && options == true && value != null) {
+            if (options) {
                 if (this.PhoneMask().checkCompleteness(value)) {
                     return null
                 } else {
-                    return "не корректен"
+                    return false
                 }
             } else {
                 return null
