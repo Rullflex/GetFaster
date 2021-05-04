@@ -375,22 +375,22 @@ block content
 				ul.lage__map.uk-switcher
 					- for(var i = 1; i <= 9; i++)
 						li.lage__map-item
-							.lage-step.lage-step--start.active
+							form.lage-step.lage-step--start.active.uk-animation-fade
 								.lage-step-title Überprüfe, wie schnell wir schon in deinen Stadtteil liefern
 								.lage-step-input-wrap.input-wrap 
-									input.lage-step-input.input(type="text" name="index" placeholder="Deine Postleitzahl")
-								a.btn.lage-step-btn(href="#") prüfen
+									input.lage-step-input.input(type="text" name="zip" placeholder="Deine Postleitzahl")
+								button.btn.lage-step-btn(type="submit") prüfen
 
-							.lage-step.lage-step--ok
+							.lage-step.lage-step--ok.uk-animation-fade
 								.lage-step-title Gute Nachrichten: Wir arbeiten#[br] schon in deinem Stadtteil.#[br] #[strong Lieferzeit ab 120 Min.]
 
-							.lage-step.lage-step--false
+							form.lage-step.lage-step--email.uk-animation-fade
 								.lage-step-title Gebe deine Email-Adresse#[br] ein, und wir informieren dich,#[br] sobald dein Stadtteil beliefert wird
 								.lage-step-input-wrap.input-wrap 
 									input.lage-step-input.input(type="email" name="email" placeholder="Deine e-mail")
-								a.btn.lage-step-btn(href="#") Bestätigen
+								button.btn.lage-step-btn(type="submit") Bestätigen
 
-							.lage-step.lage-step--thanks 
+							.lage-step.lage-step--thanks.uk-animation-fade
 
 							img.lage-map(src="" alt="")
 

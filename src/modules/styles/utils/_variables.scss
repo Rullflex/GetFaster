@@ -47,6 +47,10 @@ $body-text-align:           null !default;
 
 // https://ux.pub/polnoe-rukovodstvo-po-pravilnomu-ispolzovaniyu-animatsii-v-ux/
 // Animations
+
+// UIKIT fade
+$animation-fade-duration: 0.4s;
+
 $animation-type: ease-in-out;
 // -- hover effects, fading, scaling
 $transition--very-fast: all 100ms $animation-type;

@@ -1,5 +1,5 @@
 import UIkit from 'uikit'
-import { App } from '../../modules/scripts/_core'
+import { App, Form } from '../../modules/scripts/_core'
 
 document.addEventListener(`DOMContentLoaded`, function () {
   const app = new App()
@@ -22,6 +22,45 @@ document.addEventListener(`DOMContentLoaded`, function () {
     }
     
   }
+
+  // MAP
+  const formStepStart = new Form({
+    onSuccess: (form) => {
+      if (+form.querySelector(`input`).value === 12345) {
+        app.changeActivitySet([...form.parentElement.children], 1)
+      } else {
+        app.changeActivitySet([...form.parentElement.children], 2)
+        let input = document.createElement('input')
+        input.type = 'hidden'
+        input.value = form.querySelector(`input`).value
+        input.name = "zip"
+        form.parentElement.querySelector('.lage-step--email').append(input)
+      }
+    }
+  })
+  formStepStart.init('.lage-step--start')
+
+
+  const formStepEmail = new Form({
+    onSuccess: (form) => {
+      const formData = new FormData(form)
+
+      fetch(`${app._apiBase}mail.php`, {
+          method: 'post',
+          body: formData,
+          mode: 'no-cors'
+      }).then(response => {
+          // console.log(response)
+          return response.text()
+      }).then(text => {
+          // console.log(text)
+      }).catch(error => {
+          console.error(error)
+      })
+    }
+  })
+  formStepEmail.init('.lage-step--email')
+
 
   // app.letListClickActive(document.querySelector(`ul.list`))
   // app.videoSpy(`#video .popup__body`, 'fmT2FFVuWDA')

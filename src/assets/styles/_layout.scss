@@ -959,6 +959,15 @@
     &-btn {
       width: 17.25rem;
       line-height: 4.5rem;
+
+      background: $accent;
+      &:active {}
+      &:hover {
+        // == :active
+      }
+      &:focus-visible {
+        // == :active
+      }
     }
   }
   &-map {}

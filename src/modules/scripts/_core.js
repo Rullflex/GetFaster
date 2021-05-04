@@ -29,14 +29,8 @@ class App {
 
 
     init() {
-        // FORM
-        const form = new Form()
-        form.init()
-        
-        // const quiz = new Quiz()
-        // quiz.create()
 
-        this.dynamicVideo()
+        // this.dynamicVideo()
     }
 
 
@@ -271,155 +265,40 @@ class App {
     }
 }
 
-class Quiz extends App {
-    constructor({
-        selector,
-    } = {}) {
-        super()
-
-
-        
-    }
-
-    create () {
-        // markdown
-        let items = ''
-        document.querySelectorAll(`ul.quiz-items > li`).forEach(() => items += '<li><a href="#"></a></li>')
-        document.querySelector(`ul.quiz-items`).classList.add('uk-switcher')
-        document.querySelector(`ul.quiz-items`).insertAdjacentHTML(
-            'beforebegin', 
-            `<ul class="quiz-switcher d-none">
-                ${items}
-            </ul>`
-        )
-        document.querySelector(`ul.quiz-nav`)?.insertAdjacentHTML('afterbegin', items)
-
-
-        // init
-        const $quiz = document.querySelector(`.quiz`),
-            $quizSwitcher = $quiz.querySelector(`.quiz-switcher`),
-            $quizNav = $quiz.querySelector(`ul.quiz-nav`),
-            $quizProgressLine = $quiz.querySelector(`.quiz-progress-line`),
-            $btnsPrev = $quiz.querySelectorAll('.quiz-prev'),
-            $btnsNext = $quiz.querySelectorAll('.quiz-next'),
-
-            $itemSet = $quiz.querySelectorAll(`ul.quiz-items > li`),
-            $formValues = $quiz.querySelector(`.quiz-form-values`)
-
-
-        UIkit.switcher($quizSwitcher, {
-            animation: 'uk-animation-slide-right-small, uk-animation-slide-left-small',
-            swiping: false,
-        })
-
-        // BTNS
-        $btnsPrev?.forEach(el => {
-            el.addEventListener('click', ev => {
-                ev.preventDefault()
-                UIkit.switcher($quizSwitcher).show('previous')
-            })
-        })
-        $btnsNext?.forEach(el => {
-            el.addEventListener('click', ev => {
-                ev.preventDefault()
-                UIkit.switcher($quizSwitcher).show('next')
-            })
-        })
-
-        // NAV
-        $quizNav?.querySelectorAll(`a`).forEach((el, idx, set) => {
-            el.addEventListener('click', ev => {
-                ev.preventDefault()
-                this.changeActivitySet($quizNav.querySelectorAll(`li`), idx, 'quiz-active')
-                UIkit.switcher($quizSwitcher).show(idx)
-            })
-        })
-
-        $itemSet.forEach((el, key, set) => {
-            el.addEventListener('beforeshow', ev => {
-
-                const currentIndex = this.getItemIndex(el, set)
-
-                // PROGRESS BAR
-                if ($quizProgressLine) {
-                    
-                    $quizProgressLine.style.width = `${100 / ($itemSet.length - 1) * currentIndex}%`
-                }
-
-                if (currentIndex === 0) {
-                    // $btnPrev[1].classList.add('uk-disabled')
-                } else {
-                    // $btnPrev[1].classList.remove('uk-disabled')
-                }
-                
-                if (currentIndex === set.length - 1) {
-
-                    // //сбор ответов
-                    // $formValues.innerHTML = ''
-                    // let appendInput = (name, value) => {
-                    //     let input = document.createElement('input')
-                    //     input.type = 'hidden'
-                    //     input.value = value
-                    //     input.name = name
-                    //     $formValues.append(input)
-                    // }
-                    // $itemSet.forEach((el, key, set) => {
-                    //     const name = el.querySelector('.calc__title').innerText
-                    //     if (el.querySelector('.calc__input')) {
-                    //         appendInput(name, el.querySelector('.calc__input')?.value)
-                    //     } else if (el.querySelector('.calc__radio.active')) {
-                    //         appendInput(name, el.querySelector('.calc__radio.active')?.innerText)
-                    //     }
-                    // })
-
-                } else {
-                }
-            })
-        })
-        
-    }
-
-
-}
 
 class Form extends App {
-    constructor() {
+    constructor({
+        onSuccess = () => undefined
+    } = {}) {
         super()
+        this.onSuccess = onSuccess,
         this.selectorMessages = `.messages`
         this.classHasError = `has-error`
         this.classHasSuccess = `has-success`
         this.formInput = `.input-wrap`
-        this.disableIMask = false,
         this.disableMessages = true,
         this.removeErrorOnFocus = true,
         this.constraints = {
             email: {
-              // Email is required
               presence: true,
-              // and must be an email (duh)
               email: true
             },
             password: {
-              // Password is also required
               presence: true,
-              // And must be at least 5 characters long
               length: {
                 minimum: 5
               }
             },
             "confirm-password": {
-              // You need to confirm your password
               presence: true,
-              // and it needs to be equal to the other password
+              // it needs to be equal to the other password
               equality: {
                 attribute: "password",
                 message: "^The passwords does not match"
               }
             },
             "Имя": {
-              // You need to pick a username too
               presence: true,
-              // And it must be between 3 and 20 characters long
               length: {
                 minimum: 3,
                 maximum: 20
@@ -442,7 +321,6 @@ class Form extends App {
             //   }
             // },
             country: {
-              // You also need to input where you live
               presence: true,
               // And we restrict the countries supported to Sweden
               inclusion: {
@@ -453,13 +331,13 @@ class Form extends App {
             },
             zip: {
               // Zip is optional but if specified it must be a 5 digit long number
+              presence: true,
               format: {
                 pattern: "\\d{5}"
               }
             },
             "number-of-children": {
               presence: true,
-              // Number of children has to be an integer >= 0
               numericality: {
                 onlyInteger: true,
                 greaterThanOrEqualTo: 0
@@ -485,7 +363,6 @@ class Form extends App {
             }
         };
 
-        this.disableIMask || this.phoneMask(form)
 
         // Hook up the form so we can prevent it from being posted
         document.querySelectorAll(form).forEach(el => {
@@ -588,27 +465,8 @@ class Form extends App {
     }
 
     showSuccess(form) {
-        const formData = new FormData(form)
-        
-        // if (form.classList.contains(`form-quiz`)) {
-        //     ym(71270149,'reachGoal','quiz')
-        // } else {
-        //     ym(71270149,'reachGoal','form')
-        // }
-        UIkit.modal(`#thanks`).show();
-
-        fetch(`${this._apiBase}mail.php`, {
-            method: 'post',
-            body: formData,
-            mode: 'no-cors'
-        }).then(response => {
-            // console.log(response)
-            return response.text()
-        }).then(text => {
-            // console.log(text)
-        }).catch(error => {
-            console.error(error)
-        })
+        // const formData = new FormData(form)
+        this.onSuccess(form)
     }
 
     formConstraints(form) {
@@ -626,4 +484,4 @@ class Form extends App {
 
 
 
-export { App, Quiz, Form }
+export { App, Form }
