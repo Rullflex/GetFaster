@@ -30,7 +30,7 @@ class App {
 
     init() {
 
-        // this.dynamicVideo()
+
     }
 
 
@@ -268,6 +268,7 @@ class App {
 
 class Form extends App {
     constructor({
+        form = 'form',
         onSuccess = () => undefined
     } = {}) {
         super()
@@ -278,6 +279,20 @@ class Form extends App {
         this.formInput = `.input-wrap`
         this.disableMessages = true,
         this.removeErrorOnFocus = true,
+
+        // --- validation ---
+
+        validate.validators.isMaskComplete = (value, options, key, attributes) => {
+            if (options) {
+                if (this.PhoneMask().checkCompleteness(value)) {
+                    return null
+                } else {
+                    return false
+                }
+            } else {
+                return null
+            }
+        }
         this.constraints = {
             email: {
               presence: true,
@@ -348,21 +363,11 @@ class Form extends App {
                 isMaskComplete: true
             }
         }
+        this.init(form)
     }
 
     init(form = `form`) {
-        validate.validators.isMaskComplete = (value, options, key, attributes) => {
-            if (options) {
-                if (this.PhoneMask().checkCompleteness(value)) {
-                    return null
-                } else {
-                    return false
-                }
-            } else {
-                return null
-            }
-        };
-
+        
 
         // Hook up the form so we can prevent it from being posted
         document.querySelectorAll(form).forEach(el => {

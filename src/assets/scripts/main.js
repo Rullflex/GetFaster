@@ -25,6 +25,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
   // MAP
   const formStepStart = new Form({
+    form: '.lage-step--start',
     onSuccess: (form) => {
       if (+form.querySelector(`input`).value === 12345) {
         app.changeActivitySet([...form.parentElement.children], 1)
@@ -38,10 +39,10 @@ document.addEventListener(`DOMContentLoaded`, function () {
       }
     }
   })
-  formStepStart.init('.lage-step--start')
 
 
   const formStepEmail = new Form({
+    form: '.lage-step--email',
     onSuccess: (form) => {
       const formData = new FormData(form)
 
@@ -59,7 +60,6 @@ document.addEventListener(`DOMContentLoaded`, function () {
       })
     }
   })
-  formStepEmail.init('.lage-step--email')
 
 
   // app.letListClickActive(document.querySelector(`ul.list`))
