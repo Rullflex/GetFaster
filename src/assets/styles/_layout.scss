@@ -719,7 +719,7 @@
   }
   &__app-link{
     .play-badge{
-      width: 17.5rem;
+      width: 18.5rem;
     }
   }
   .bottle{
@@ -880,7 +880,7 @@
   }
   &__app-load{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: row;
     justify-content: center;
   }
@@ -943,6 +943,12 @@
     text-align: center;
     &:not(.active) {
       display: none;
+    }
+    &-index{
+      font-size: 1.125rem;
+      line-height: 1.625rem;
+      max-width: 16.875rem;
+      margin-bottom: 1.25rem;
     }
     &-title {
       font-size: 1.125rem;
@@ -1433,7 +1439,11 @@
     height: 9.75rem;
     z-index: 20;
   }
-  
+  .products__app-link{
+    .play-badge{
+      width: 18.5rem;
+    }
+  }
 }
 
 @media (min-width: map-get($grid-breakpoints, lg)){
@@ -1498,7 +1508,7 @@
   &__app-load{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 }
@@ -1679,10 +1689,7 @@
   &__bottom-lang{
     display: none;
   }
-  &__bottom-lang,
-  &__bottom-time{
-    padding-left: 0;
-  }
+
   &__bottom-lang-link{
     font-size: 1.25rem;
     font-weight: 700;
@@ -1771,6 +1778,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
   &__bottom-social{
     display: flex;
@@ -1783,10 +1791,6 @@
   }
   &__bottom-lang{
     display: block;
-  }
-  &__bottom-lang,
-  &__bottom-time{
-    padding-left: 7.5rem;
   }
   &__bottom-time{
     text-align: left;

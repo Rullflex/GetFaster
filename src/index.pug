@@ -318,7 +318,7 @@ block content
 											.sale -5%
 										li.products__item
 											.products__item-content
-												+picture(jpeg, `${assets}products/14`, 'n').products__item-image
+												+picture(jpg, `${assets}products/14`, 'n').products__item-image
 											span.products__item-price
 												| &euro; 0.72
 										li.products__item
@@ -373,18 +373,18 @@ block content
 					- for(var i = 1; i <= 9; i++)
 						li.lage__map-item
 							form.lage-step.lage-step--start.active.uk-animation-fade
-								.lage-step-title  Leider beliefern wir diese Adresse noch nicht.
-								p.lage-step-text Gebe deine Email-Adresse#[br] ein, und wir informieren dich,#[br] sobald dein Stadtteil beliefert wird
+								.lage-step-index  Überprüfe, wie schnell wir schon in deinen Stadtteil liefern
 								.lage-step-input-wrap.input-wrap 
-									input.lage-step-input.input(type="text" name="zip" placeholder="Deine e-mail")
-								button.btn.lage-step-btn(type="submit") Bestätigen
+									input.lage-step-input.input(type="text" name="zip" placeholder="Deine Postleitzahl")
+								button.btn.lage-step-btn(type="submit") prüfen
 								a(href='#').lage-step-link PLZ ändern
 
 							.lage-step.lage-step--ok.uk-animation-fade
 								.lage-step-title-show Gute Nachrichten: Wir arbeiten schon in deinem Stadtteil. #[strong Lieferzeit ab 120 Min.]
 
 							form.lage-step.lage-step--email.uk-animation-fade
-								.lage-step-title Gebe deine Email-Adresse#[br] ein, und wir informieren dich,#[br] sobald dein Stadtteil beliefert wird
+								.lage-step-title  Leider beliefern wir diese Adresse noch nicht.
+								p.lage-step-text Gebe deine Email-Adresse#[br] ein, und wir informieren dich,#[br] sobald dein Stadtteil beliefert wird
 								.lage-step-input-wrap.input-wrap 
 									input.lage-step-input.input(type="email" name="email" placeholder="Deine e-mail")
 								button.btn.lage-step-btn(type="submit") Bestätigen
@@ -392,7 +392,6 @@ block content
 							.lage-step.lage-step--thanks.uk-animation-fade
 
 							img.lage-map(src="" alt="")
-
 		section.reviews
 			.container
 				h2.reviews__title.title
