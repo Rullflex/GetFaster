@@ -377,10 +377,9 @@ block content
 								.lage-step-input-wrap.input-wrap 
 									input.lage-step-input.input(type="text" name="zip" placeholder="Deine Postleitzahl")
 								button.btn.lage-step-btn(type="submit") prüfen
-								a(href='#').lage-step-link PLZ ändern
 
 							.lage-step.lage-step--ok.uk-animation-fade
-								.lage-step-title-show Gute Nachrichten: Wir arbeiten schon in deinem Stadtteil. #[strong Lieferzeit ab 120 Min.]
+								.lage-step-title-show Gute Nachrichten: Wir arbeiten schon in deinem Stadtteil. #[strong Lieferzeit ab #[span.lage-step-ok-time 120] Min.]
 
 							form.lage-step.lage-step--email.uk-animation-fade
 								.lage-step-title  Leider beliefern wir diese Adresse noch nicht.
@@ -388,10 +387,11 @@ block content
 								.lage-step-input-wrap.input-wrap 
 									input.lage-step-input.input(type="email" name="email" placeholder="Deine e-mail")
 								button.btn.lage-step-btn(type="submit") Bestätigen
+								a(href='#').lage-step-link PLZ ändern
 
 							.lage-step.lage-step--thanks.uk-animation-fade
-
-							img.lage-map(src="" alt="")
+								.lage-step-title-show Типо вот ту текст сапсбо за мыло #[strong очень приятно, ответим]
+				+picture(png, `${assets}map`, 'n').lage__img-map
 		section.reviews
 			.container
 				h2.reviews__title.title
