@@ -10,7 +10,8 @@ block header
 			.header__inner
 				.header__logo
 					a.logo
-						+picture-min(png, `${assets}logo`, `${assets}logo`, 'n')(alt='logo')
+						img(src=`${assets}logo.svg`, alt="logo")
+						//- +picture-min(png, `${assets}logo`, `${assets}logo`, 'n')(alt='logo')
 					a.header__link(href='#') Lieferst&auml;dte
 				.header__info
 					p.header__info-text
