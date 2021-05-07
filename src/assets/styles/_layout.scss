@@ -186,6 +186,13 @@
     top: 0.9375rem;
     z-index: 5;
   }
+  &-bang {
+    width: 9.25rem;
+    position: absolute;
+    top: 0.25rem;
+    left: 5.4375rem;
+    z-index: 6;
+  }
 }
 @media (min-width: map-get($grid-breakpoints, lg)) {
   .phone{
@@ -284,6 +291,9 @@
     }
     &-video {
       left: 1rem;
+    }
+    &-bang {
+      left: 5rem;
     }
   }
 }
