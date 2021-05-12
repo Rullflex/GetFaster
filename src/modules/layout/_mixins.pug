@@ -1,5 +1,16 @@
 include widgets/_menu
 
+mixin product-item(product, currentIndex, startIndex, folderName)
+	li.products__item
+		.products__item-content(class=`${product.sticker == 'G' ? 'gluten-item' : ''}${product.sticker == 'L' ? 'yogurt-item' : ''}${product.sticker == 'V' ? 'vegan-item' : ''}${product.sticker == 'B' ? 'bio-item' : ''}`)
+			+picture(product.imgExt, `${assets}products/${folderName}/${currentIndex + startIndex}`, 'n').products__item-image
+		if product.sticker == 'R'
+			.products__item-price
+				mark.price!= '&euro; ' + product.oldPrice 
+				span!= '&euro; ' + product.price
+			.sale= product.sale
+		else
+			span.products__item-price!= '&euro; ' + product.price
 //- POPUP BASE
 
 mixin popup

@@ -233,106 +233,434 @@ block content
 			.container
 				.products__inner
 					ul.products__buttons(data-uk-switcher="animation: uk-animation-fade;")
-						li.products__buttons-item
-							a.products__btn(href='#')
-								| OBST
-						li.products__buttons-item
-							a.products__btn(href='#')
-								| GEM&uuml;SE
-						li.products__buttons-item
-							a.products__btn(href='#')
-								| Getr&auml;nken
+						li.products__buttons-item: a.products__btn(href='#') Beliebt
+						li.products__buttons-item: a.products__btn(href='#') Brot
+						li.products__buttons-item: a.products__btn(href='#') Snacks
+						li.products__buttons-item: a.products__btn(href='#') Getränke
 					ul.products__items.uk-switcher
-						- for(var i=0; i < 3; i++)
-							li
-								.products__items-top(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
-									ul.uk-slider-items
-										li.products__item
-											.products__item-content
-												+picture(png, `${assets}products/1`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 1.77
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/2`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 1.77
-										li.products__item
-											.products__item-content.blueberries-item
-												+picture(png, `${assets}products/3`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 1.49
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/4`, 'n').products__item-image.bottle
-											span.products__item-price
-												mark.price &euro; 3.99
-												| &euro; 2.99
-											.sale -10%
-										li.products__item
-											.products__item-content.yogurt-item
-												+picture(jpg, `${assets}products/5`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 1.06
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/6`, 'n').products__item-image.bottle
-											span.products__item-price
-												| &euro; 5.99
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/7`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 2.15
-										li.products__item
-											.products__item-content
-												+picture(png, `${assets}products/8`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 0.99
-								.products__items-bottom(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
-									ul.uk-slider-items
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/9`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 5.19
-										li.products__item
-											.products__item-content.bio-item
-												+picture(jpg, `${assets}products/10`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 2.66
-										li.products__item
-											.products__item-content
-												+picture(png, `${assets}products/11`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 1.76
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/12`, 'n').products__item-image
-											span.products__item-price
-												mark.price &euro; 3.99
-												| &euro; 0.89
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/13`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 8.20
-											.sale -5%
-										li.products__item
-											.products__item-content
-												+picture(jpg, `${assets}products/14`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 0.72
-										li.products__item
-											.products__item-content
-												+picture(png, `${assets}products/15`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 0.95
-										li.products__item
-											.products__item-content
-												+picture(png, `${assets}products/16`, 'n').products__item-image
-											span.products__item-price
-												| &euro; 1.39
+						li
+							.products__items-top(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/1`, 'n').products__item-image
+										span.products__item-price
+											mark.price &euro; 2.99
+											| &euro; 1.39
+										.sale -42%
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Beliebt/2`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.45
+									li.products__item.bio-item
+										.products__item-content
+											+picture(png, `${assets}products/Beliebt/3`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 0.36
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Beliebt/4`, 'n').products__item-image
+										span.products__item-price
+											mark.price &euro; 1.99
+											| &euro; 0.99
+										.sale -17%
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Beliebt/5`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.49
+									li.products__item.yogurt-item
+										.products__item-content
+											+picture(png, `${assets}products/Beliebt/6`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.49
+									li.products__item.gluten-item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/7`, 'n').products__item-image
+										span.products__item-price &euro; 4.99
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Beliebt/8`, 'n').products__item-image
+										span.products__item-price &euro; 2.00
+							.products__items-bottom(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/9`, 'n').products__item-image
+										span.products__item-price #[mark.price &euro; 1.90] &euro; 0.72
+										.sale -63%
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/10`, 'n').products__item-image
+										span.products__item-price &euro; 6.30
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Beliebt/11`, 'n').products__item-image
+										span.products__item-price &euro; 2.38
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/12`, 'n').products__item-image
+										span.products__item-price &euro; 6.29
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/13`, 'n').products__item-image
+										span.products__item-price &euro; 0.69
+									li.products__item.vegan-item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/14`, 'n').products__item-image
+										span.products__item-price &euro; 2.99
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/15`, 'n').products__item-image
+										span.products__item-price &euro; 1.49
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Beliebt/16`, 'n').products__item-image
+										span.products__item-price &euro; 1.29
+						li
+							.products__items-top(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									-
+										var set = [
+											{
+												sticker: '',
+												sale: '0%',
+												oldPrice: '0.00',
+												price: '3.25',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '0%',
+												oldPrice: '0.00',
+												price: '2.99',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.95',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.94',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '3.10',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: 'R',
+												sale: '-17%',
+												oldPrice: '1.19',
+												price: '0.99',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.60',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.59',
+												imgExt: 'png',
+											},
+										]
+									each product, idx in set
+										+product-item(product, idx, 1, 'Brot')
+							.products__items-bottom(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									-
+										var set = [
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.49',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.52',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.46',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.39',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.70',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.03',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.81',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '3.42',
+												imgExt: 'png',
+											},
+										]
+									each product, idx in set
+										+product-item(product, idx, 9, 'Brot')
+						li
+							.products__items-top(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									-
+										var set = [
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.45',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.56',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.30',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.98',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '3.38',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.04',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.50',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.70',
+												imgExt: 'png',
+											},
+										]
+									each product, idx in set
+										+product-item(product, idx, 1, 'Snacks')
+							.products__items-bottom(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									-
+										var set = [
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.46',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '4.39',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.00',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.52',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.05',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '3.26',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.60',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.92',
+												imgExt: 'png',
+											},
+										]
+									each product, idx in set
+										+product-item(product, idx, 9, 'Snacks')
+						li
+							.products__items-top(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Getränke/1`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.77
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/2`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.77
+									li.products__item.blueberries-item
+										.products__item-content
+											+picture(png, `${assets}products/Getränke/3`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.49
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/4`, 'n').products__item-image
+										span.products__item-price
+											mark.price &euro; 3.99
+											| &euro; 2.99
+										.sale -10%
+									li.products__item.yogurt-item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/5`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.06
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/6`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 5.99
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/7`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 2.15
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Getränke/8`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 0.99
+							.products__items-bottom(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
+								ul.uk-slider-items
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/9`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 5.19
+									li.products__item.bio-item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/10`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 2.66
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Getränke/11`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.76
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/12`, 'n').products__item-image
+										span.products__item-price
+											mark.price &euro; 3.99
+											| &euro; 0.89
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/13`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 8.20
+										.sale -5%
+									li.products__item
+										.products__item-content
+											+picture(jpg, `${assets}products/Getränke/14`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 0.72
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Getränke/15`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 0.95
+									li.products__item
+										.products__item-content
+											+picture(png, `${assets}products/Getränke/16`, 'n').products__item-image
+										span.products__item-price
+											| &euro; 1.39
 				.products__app-title
 					| Probier es mit GetFaster!
 				.products__app-load
