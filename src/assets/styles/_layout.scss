@@ -634,6 +634,24 @@
       max-height: 100%;
       @include center-item;
     }
+    &::before {
+      padding: 0.1rem 0.5rem;
+      opacity: 0;
+      transition: $transition--fast;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      background: #000;
+      border-radius: 0.3125rem;
+      color: white;
+      font-weight: 500;
+      z-index: 3;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
   }
   &__item-content{
     width: 5.125rem;
@@ -666,6 +684,7 @@
       right: 0.9375rem;
       top: 0.6875rem;
       background-image: url('../images/products/vegan.png');
+      background-size: contain;
       background-repeat: no-repeat;
       width: 1.9375rem;
       height: 1.1875rem;
@@ -686,6 +705,11 @@
       right: 0.8125rem;
       top: 0.5625rem;
       background-image: url('../images/products/dairy.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &::before {
+      content: 'Laktosefrei';
     }
   }
   .vegan-item{
@@ -695,8 +719,13 @@
       width: 1.9375rem;
       height: 1.1875rem;
       background-image: url('../images/products/vegan.png');
+      background-repeat: no-repeat;
+      background-size: contain;
       right:0.625rem;
       top: 0.625rem;
+    }
+    &::before {
+      content: 'Vegan';
     }
   }
   .gluten-item{
@@ -708,17 +737,28 @@
       right: 0.8125rem;
       top: 0.5625rem;
       background-image: url('../images/products/gluten.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &::before {
+      content: 'Glutenfrei';
     }
   }
   .bio-item{
     &::after{
       content: '';
       position: absolute;
-      width: 2rem;
-      height: 1.75rem;
-      background-image: url('../images/products/bio.png');
-      right:0.625rem;
+      width: 1.5rem;
+      // height: 1.75rem;
+      height: 1.5rem;
+      background-image: url('../images/products/bio.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      right: 0.625rem;
       top: 0.625rem;
+    }
+    &::before {
+      content: 'BIO';
     }
   }
   .sale{
@@ -829,19 +869,6 @@
 
     &-image {
     }
-    .sale,
-    &::before,
-    &::after {
-      opacity: 0;
-      transition: $transition--fast;
-    }
-    &:hover {
-      .sale,
-      &::before,
-      &::after {
-        opacity: 1;
-      }
-    }
   }
   
   &__item-content{
@@ -896,7 +923,7 @@
   .bio-item{
     &::after{
       width: 2rem;
-      height: 1.75rem;
+      height: 2rem;
       right:1.5625rem;
       top: 1.125rem;
     }
@@ -1067,6 +1094,30 @@
       line-height: 1.625rem;
       color: $accent;
       text-decoration: underline;
+      text-align: center;
+    }
+      
+    &__links-title{
+      font-size: 1.375rem;
+      line-height: 2.25rem;
+      @extend %pop-600;
+      margin-bottom: 1.25rem;
+      position: absolute;
+      bottom: -3.5625rem;
+    }
+    &__links-load{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 5.0625rem;
+      position: absolute;
+      bottom: -8.0625rem;
+    }
+    &__links-link{
+      .play-badge{
+        width: 18.5rem;
+      }
     }
   }
   &-map {}
@@ -1196,8 +1247,18 @@
     &-link{
       font-size: 0.9375rem;
       line-height: 1.625rem;
-      color: $accent;
-      text-decoration: underline;
+      margin-left: 137px;
+    }
+    
+    &__links-title{
+      font-size: 30px;
+      line-height: 2.25rem;
+      bottom: -5rem;
+    }
+    &__links-load{
+      flex-direction: row;
+      justify-content: flex-start;
+      bottom: -10rem;
     }
   }
   &-map {}

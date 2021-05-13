@@ -307,6 +307,11 @@ document.addEventListener(`DOMContentLoaded`, function () {
     }
   })
 
+  document.querySelector(`.lage-step-link`).addEventListener('click', (event) => {
+    event.preventDefault()
+    app.changeActivitySet([...document.querySelector(`.lage__map-item`).children], 0)
+  })
+
 
   // app.letListClickActive(document.querySelector(`ul.list`))
   // app.videoSpy(`#video .popup__body`, 'fmT2FFVuWDA')

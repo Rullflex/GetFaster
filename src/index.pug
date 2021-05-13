@@ -155,7 +155,7 @@ block content
 						.phone__shop-frame
 							+picture-min(png, `${assets}phone/phone`, `${assets}phone/phone`, 'n')(alt='phone-image').phone-frame
 							+picture-min(png, `${assets}phone/screen`, `${assets}phone/screen`, 'n').phone-screen
-							video.phone-video(src="https://hafizovtimur.ru/video.mp4" width="270px" height="auto" playsinline="playsInline" muted="" loop="" autoplay="" preload="preload")
+							video.phone-video(src="https://hafizovtimur.ru/video.mp4" width="270px" height="auto" playsinline="playsInline" muted="" loop="" autoplay="" preload="")
 							+picture(png, `${assets}phone/bang`, 'n').phone-bang
 		section.advantages
 			.container
@@ -232,7 +232,7 @@ block content
 				| bis zu Getr&auml;nken und Tiefk&uuml;hlkost.
 			.container
 				.products__inner
-					ul.products__buttons(data-uk-switcher="animation: uk-animation-fade;")
+					ul.products__buttons(data-uk-switcher="animation: uk-animation-fade; swiping: false")
 						li.products__buttons-item: a.products__btn(href='#') Beliebt
 						li.products__buttons-item: a.products__btn(href='#') Brot
 						li.products__buttons-item: a.products__btn(href='#') Snacks
@@ -575,92 +575,130 @@ block content
 						li
 							.products__items-top(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
 								ul.uk-slider-items
-									li.products__item
-										.products__item-content
-											+picture(png, `${assets}products/Getränke/1`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 1.77
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/2`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 1.77
-									li.products__item.blueberries-item
-										.products__item-content
-											+picture(png, `${assets}products/Getränke/3`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 1.49
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/4`, 'n').products__item-image
-										span.products__item-price
-											mark.price &euro; 3.99
-											| &euro; 2.99
-										.sale -10%
-									li.products__item.yogurt-item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/5`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 1.06
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/6`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 5.99
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/7`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 2.15
-									li.products__item
-										.products__item-content
-											+picture(png, `${assets}products/Getränke/8`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 0.99
+									-
+										var set = [
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.88',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.77',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.67',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.79',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.19',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.09',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '4.29',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '2.28',
+												imgExt: 'png',
+											},
+										]
+									each product, idx in set
+										+product-item(product, idx, 1, 'Getränke')
 							.products__items-bottom(data-uk-slider="center: true; autoplay: true; autoplay-interval: 0; easing: linear; velocity: 0.04")
 								ul.uk-slider-items
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/9`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 5.19
-									li.products__item.bio-item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/10`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 2.66
-									li.products__item
-										.products__item-content
-											+picture(png, `${assets}products/Getränke/11`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 1.76
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/12`, 'n').products__item-image
-										span.products__item-price
-											mark.price &euro; 3.99
-											| &euro; 0.89
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/13`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 8.20
-										.sale -5%
-									li.products__item
-										.products__item-content
-											+picture(jpg, `${assets}products/Getränke/14`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 0.72
-									li.products__item
-										.products__item-content
-											+picture(png, `${assets}products/Getränke/15`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 0.95
-									li.products__item
-										.products__item-content
-											+picture(png, `${assets}products/Getränke/16`, 'n').products__item-image
-										span.products__item-price
-											| &euro; 1.39
+									-
+										var set = [
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '1.19',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.89',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.99',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.99',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.99',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.99',
+												imgExt: 'jpg',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '0.93',
+												imgExt: 'png',
+											},
+											{
+												sticker: '',
+												sale: '',
+												oldPrice: '',
+												price: '3.99',
+												imgExt: 'png',
+											},
+										]
+									each product, idx in set
+										+product-item(product, idx, 9, 'Getränke')
 				.products__app-title
 					| Probier es mit GetFaster!
 				.products__app-load
@@ -710,6 +748,12 @@ block content
 
 							.lage-step.lage-step--ok.uk-animation-fade
 								.lage-step-title-show Gute Nachrichten: Wir arbeiten schon in deinem Stadtteil. #[strong Lieferzeit ab #[span.lage-step-ok-time 120] Min.]
+								.lage-step__links-title HOL DIP JETZT DIE GETFASTER-APP!
+								.lage-step__links-load
+									a.lage-step__links-link(href='#' data-mob-any)
+										+picture(png, `${assets}play-badge`, 'n').play-badge
+									a.lage-step__links-link(href='#' data-mob-ios)
+										+picture(png, `${assets}products/app`, 'n')
 
 							form.lage-step.lage-step--email.uk-animation-fade
 								.lage-step-title  Leider beliefern wir diese Adresse noch nicht.
@@ -720,7 +764,7 @@ block content
 								a(href='#').lage-step-link PLZ ändern
 
 							.lage-step.lage-step--thanks.uk-animation-fade
-								.lage-step-title-show Типо вот ту текст сапсбо за мыло #[strong очень приятно, ответим]
+								.lage-step-title-show Danke, wir informieren dich über die Eröffnung
 				+picture(png, `${assets}map`, 'n').lage__img-map
 		section.reviews
 			.container
