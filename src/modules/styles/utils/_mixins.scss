@@ -61,14 +61,15 @@
 	$maxContainerWidth: $maxContainerWidth - 320;
 	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxContainerWidth}));
 }
-@mixin aFontMob($size, $maxContainerWidth: 420, $koef: 1.3, $startPoint: 320) {
+@mixin aFontMob($size, $endPoint: 420, $startPoint: 320) {
+	$koef: $endPoint / $startPoint;
 	$maxSize: $size * $koef;
-	@media (min-width: #{$maxContainerWidth + px}) {
+	@media (min-width: #{$endPoint + px}) {
 		font-size: #{$maxSize + px};
 	}
 	$addSize: $maxSize - $size;
-	$maxContainerWidth: $maxContainerWidth - $startPoint;
-	font-size: calc(#{$size + px} + #{$addSize} * ((100vw - #{$startPoint + px}) / #{$maxContainerWidth}));
+	$endPoint: $endPoint - $startPoint;
+	font-size: calc(#{$size + px} + #{$addSize} * ((100vw - #{$startPoint + px}) / #{$endPoint}));
 }
 @mixin aProp($prop, $startPoint, $koef: 0.3, $maxContainerWidth: 425, $minContainerWidth: 320) {
 	@media (min-width: #{$maxContainerWidth + px}) {

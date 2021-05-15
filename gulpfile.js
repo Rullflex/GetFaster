@@ -10,6 +10,7 @@ const clean = require('./gulp/tasks/clean')
 const copyDependencies = require('./gulp/tasks/copyDependencies')
 const lighthouse = require('./gulp/tasks/lighthouse')
 const svgSprite = require('./gulp/tasks/svgSprite')
+const deploy = require('./gulp/tasks/deploy')
 
 function setMode(isProduction = false) {
   return cb => {
@@ -28,4 +29,5 @@ const build = gulp.series(
 module.exports.start = gulp.series(setMode(), build, serve)
 module.exports.build = gulp.series(setMode(true), build)
 
-module.exports.lighthouse = gulp.series(lighthouse)
+module.exports.lighthouse = gulp.series(lighthouse) 
+// module.exports.deploy = gulp.task('deploy', deploy('ssh.strato.de', 'sftp_1@getfaster.me', ''))

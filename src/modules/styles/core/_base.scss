@@ -46,7 +46,7 @@
 }
 
 html {
-    @include aFontMob(16, 420, 1.105, 380);
+    @include aFontMob(16, 420, 380);
 }
 
 @media (min-width: map-get($grid-breakpoints, md)) {

@@ -1,8 +1,9 @@
 extends modules/layout/_layout
 
 prepend head
-	title Title your page
-	meta(name="description", content="Описание страницы")
+	title GetFaster! Dein Online Supermarkt in Berlin, Düsseldorf, Essen. Lebensmittel liefern lassen!
+	meta(name="description", content="GetFaster! Dein Online Supermarkt in Berlin, Düsseldorf, Essen. Lebensmittel liefern lassen")
+	meta(name="keywords", content="online Supermarkt, Berlin, Düsseldorf, Essen, Lebensmittel Lieferung, Lebensmittel Lieferservice, Lebensmittel liefern lassen, GetFaster")
 
 block header
 	header.header
@@ -12,7 +13,7 @@ block header
 					a.logo
 						img(src=`${assets}logo.svg`, alt="logo")
 						//- +picture-min(png, `${assets}logo`, `${assets}logo`, 'n')(alt='logo')
-					a.header__link(href='#') Lieferst&auml;dte
+					a.header__link(href='#lage' data-uk-scroll="offset: 20") Lieferzone
 				.header__info
 					p.header__info-text
 						| Jetzt ge&ouml;ffnet!
@@ -34,7 +35,7 @@ block footer
 						li.footer__top-list-item
 							a.footer__top-list-link(href='#') AGB
 						li.footer__top-list-item
-							a.footer__top-list-link(href='#') Karriere
+							a.footer__top-list-link(href='https://getfasterio.join.com') Karriere
 				.footer__top-list-inner
 					.footer__top-title Services
 					.footer__top-list-row
@@ -51,24 +52,24 @@ block footer
 					.footer__top-list-row
 						ul.footer__top-list
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Berlin
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Berlin
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') D&uuml;sseldorf
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") D&uuml;sseldorf
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Essen
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Essen
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Ratingen
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Ratingen
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Gelsenkirchen
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Gelsenkirchen
 						ul.footer__top-list
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Bottrop
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Bottrop
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Oberhausen
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Oberhausen
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Hilden
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Hilden
 							li.footer__top-list-item
-								a.footer__top-list-link(href='#') Gladbeck
+								a.footer__top-list-link(href='#lage' data-uk-scroll="offset: 20") Gladbeck
 				.footer__top-list-inner
 					.footer__top-list-title
 						| Vergleich
@@ -97,16 +98,16 @@ block footer
 				.footer__bottom-inner
 					ul.footer__bottom-social
 						li.footer__bottom-social-item
-							a.footer__bottom-social-link(href='#' data-mob-any)
+							a.footer__bottom-social-link(href=gpLink data-mob-any)
 								+picture-min(png, `${assets}play-badge`, `${assets}play-badge`, 'n').google-play
 						li.footer__bottom-social-item
-							a.footer__bottom-social-link(href='#' data-mob-ios)
+							a.footer__bottom-social-link(href=asLink data-mob-ios)
 								+picture-min(png, `${assets}phone/app-store`, `${assets}phone/app-store`, 'n').app-store
 						li.footer__bottom-social-item
-							a.footer__bottom-social-link(href='#')
+							a.footer__bottom-social-link(href=fbLink)
 								+picture(png, `${assets}fb`, 'n')
 						li.footer__bottom-social-item
-							a.footer__bottom-social-link(href='#')
+							a.footer__bottom-social-link(href=instLink)
 								+picture(png, `${assets}in`, 'n')
 					.footer__bottom-lang
 						a.footer__bottom-lang-link(href='#')
@@ -147,15 +148,15 @@ block content
 							.phone__app-text
 								p Hol dir jetzt die
 								p GetFaster-App!
-							a.phone__app-load(href='#' data-mob-any)
+							a.phone__app-load(href=gpLink data-mob-any)
 								+picture-min(png, `${assets}play-badge`, `${assets}play-badge`, 'n')(alt='google-play').play-badge
-							a.phone__app-load(href='#' data-mob-ios)
+							a.phone__app-load(href=asLink data-mob-ios)
 								+picture-min(png, `${assets}phone/app-store`, `${assets}phone/app-store`, 'n')(alt='app-store')
 					.phone__shop
 						.phone__shop-frame
 							+picture-min(png, `${assets}phone/phone`, `${assets}phone/phone`, 'n')(alt='phone-image').phone-frame
 							+picture-min(png, `${assets}phone/screen`, `${assets}phone/screen`, 'n').phone-screen
-							video.phone-video(src="https://hafizovtimur.ru/video.mp4" width="270px" height="auto" playsinline="playsInline" muted="" loop="" autoplay="" preload="")
+							video.phone-video(src="/video.mp4" width="270px" height="auto" playsinline="playsInline" muted="" loop="" autoplay="" preload="")
 							+picture(png, `${assets}phone/bang`, 'n').phone-bang
 		section.advantages
 			.container
@@ -589,7 +590,7 @@ block content
 												sale: '',
 												oldPrice: '',
 												price: '1.77',
-												imgExt: 'png',
+												imgExt: 'jpg',
 											},
 											{
 												sticker: '',
@@ -702,9 +703,9 @@ block content
 				.products__app-title
 					| Probier es mit GetFaster!
 				.products__app-load
-					a.products__app-link(href='#' data-mob-any)
+					a.products__app-link(href=gpLink data-mob-any)
 						+picture(png, `${assets}play-badge`, 'n').play-badge
-					a.products__app-link(href='#' data-mob-ios)
+					a.products__app-link(href=asLink data-mob-ios)
 						+picture(png, `${assets}products/app`, 'n')
 		section.lage#lage
 			.container
@@ -714,29 +715,29 @@ block content
 						a(href='#').lage__btn Berlin
 						span.lage__btn-desc ab 120 Min
 					li.lage__button
-						a(href='#').lage__btn RATINGEN
-						span.lage__btn-desc ab 30 Min
-					li.lage__button
 						a(href='#').lage__btn Düsseldorf
 						span.lage__btn-desc ab 30 Min
 					li.lage__button
 						a(href='#').lage__btn essen
-						span.lage__btn-desc ab 30 Min
+						span.lage__btn-desc ab 120 Min
+					li.lage__button
+						a(href='#').lage__btn RATINGEN
+						span.lage__btn-desc ab 90 Min
 					li.lage__button
 						a(href='#').lage__btn Gelsenkirchen
-						span.lage__btn-desc ab 30 Min
+						span.lage__btn-desc ab 120 Min
 					li.lage__button
 						a(href='#').lage__btn Bottrop
-						span.lage__btn-desc ab 30 Min
+						span.lage__btn-desc ab 120 Min
 					li.lage__button
 						a(href='#').lage__btn Oberhausen
-						span.lage__btn-desc ab 30 Min
+						span.lage__btn-desc ab 120 Min
 					li.lage__button
 						a(href='#').lage__btn Gladbeck
-						span.lage__btn-desc ab 30 Min
+						span.lage__btn-desc ab 120 Min
 					li.lage__button
 						a(href='#').lage__btn Hilden
-						span.lage__btn-desc ab 30 Min 
+						span.lage__btn-desc ab 150 Min 
 				ul.lage__map.uk-switcher
 					- for(var i = 1; i <= 9; i++)
 						li.lage__map-item
@@ -748,11 +749,11 @@ block content
 
 							.lage-step.lage-step--ok.uk-animation-fade
 								.lage-step-title-show Gute Nachrichten: Wir arbeiten schon in deinem Stadtteil. #[strong Lieferzeit ab #[span.lage-step-ok-time 120] Min.]
-								.lage-step__links-title HOL DIP JETZT DIE GETFASTER-APP!
+								.lage-step__links-title HOL DIP JETZT#[br.d-lg-none] DIE GETFASTER-APP!
 								.lage-step__links-load
-									a.lage-step__links-link(href='#' data-mob-any)
+									a.lage-step__links-link(href=gpLink data-mob-any)
 										+picture(png, `${assets}play-badge`, 'n').play-badge
-									a.lage-step__links-link(href='#' data-mob-ios)
+									a.lage-step__links-link(href=asLink data-mob-ios)
 										+picture(png, `${assets}products/app`, 'n')
 
 							form.lage-step.lage-step--email.uk-animation-fade
@@ -998,9 +999,9 @@ block content
 						.offer__app-title
 							| Hol dir jetzt die GetFaster-App!
 						.offer__app-load
-							a.products__app-link(href='#' data-mob-any)
+							a.products__app-link(href=gpLink data-mob-any)
 								+picture(png, `${assets}play-badge`, 'n').play-badge
-							a.products__app-link(href='#' data-mob-ios)
+							a.products__app-link(href=asLink data-mob-ios)
 								+picture(png, `${assets}products/app`, 'n')
 		section.tabs#faq
 			.container
